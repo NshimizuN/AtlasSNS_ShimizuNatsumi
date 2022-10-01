@@ -63,7 +63,7 @@
     </footer>
     <!--jQuery-->
     <!--<script src="/AtlasSNS/public/js/jquery-3.6.1.min.js"></script>-->
-    <script src="{{ asset('/AtlasSNS/public/js/script.js') }}"></script>
+    <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 
 </html>
