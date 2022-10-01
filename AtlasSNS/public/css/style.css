@@ -70,7 +70,7 @@ header {
 }
 
 .accordion-content {
-    display: none;
+    /*display: none;*/
     padding-left: 2.3125em;
 }
 
@@ -81,6 +81,20 @@ header {
 }
 
 /* headerのアコーディオンメニュー↑ */
+
+/*サイドバーのメニュー*/
+.btn {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0.625em 0.625em 0.625em 2em;
+    font-size: 1.0em;
+    font-weight: normal;
+    color: #fff;
+    background: #0079c1;
+    cursor: pointer;
+}
+
 
 /* main content */
 #row {

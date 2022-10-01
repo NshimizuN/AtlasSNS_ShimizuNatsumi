@@ -2,6 +2,8 @@
 
 @section('content')
 
+{!! Form::open(['url' => '/search']) !!}
+
 
 
 @endsection
