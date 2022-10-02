@@ -44,11 +44,11 @@ header {
     color: white;
 }
 
-.accordion-title {
+.js-accordion-title {
     position: relative;
 }
 
-.accordion-title:after {
+.js-accordion-title:after {
     content: "";
     position: absolute;
     right: 25px;
@@ -70,7 +70,7 @@ header {
 }
 
 .accordion-content {
-    /*display: none;*/
+    display: none;
     padding-left: 2.3125em;
 }
 
@@ -83,6 +83,7 @@ header {
 /* headerのアコーディオンメニュー↑ */
 
 /*サイドバーのメニュー*/
+/*フォロー、フォロワーボタン*/
 .btn {
     display: block;
     position: relative;

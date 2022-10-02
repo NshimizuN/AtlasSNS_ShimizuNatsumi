@@ -26,16 +26,16 @@
         <div id="head">
             <h1><a href="/top"><img src="./images/atlas.png"></a></h1>
             <div id="accordion" class="accordion-container">
-                <div id="">
-                    <p class="accordion-title js-accordion-title">〇〇さん<img src="images/arrow.png"></p>
-                    <!--ハンバーガーメニュー-->
-                    <div class="accordion-content">
-                        <ul>
-                            <li><a href="/top">ホーム</a></li>
-                            <li><a href="/profile">プロフィール</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </div>
+                <p class="js-accordion-title">〇〇さん
+                    <img src="images/arrow.png">
+                </p>
+                <!--ハンバーガーメニュー-->
+                <div class="accordion-content">
+                    <ul>
+                        <li><a href="/top">ホーム</a></li>
+                        <li><a href="/profile">プロフィール</a></li>
+                        <li><a href="/logout">ログアウト</a></li>
+                    </ul>
                 </div>
     </header>
     <div id="row">

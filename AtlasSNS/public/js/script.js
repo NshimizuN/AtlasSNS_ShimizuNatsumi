@@ -1,9 +1,9 @@
 jQuery(function ($) {
   $('.js-accordion-title').on('click', function () {
     /*クリックでコンテンツを開閉*/
-    $(this).toggleClass('is-open');
+    $(this).next().slideToggle(200);
     /*矢印の向きを変更*/
-    $(this).siblings('.accordion-content').toggleClass('is-open');
+    $(this).toggleClass('open', 200);
   });
 
 });
