@@ -46,6 +46,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+    //バリデーション内容
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -53,6 +55,12 @@ class RegisterController extends Controller
             'mail' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:4|confirmed',
         ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors($validator);
+        }
     }
 
     /**
@@ -83,12 +91,16 @@ class RegisterController extends Controller
     {
         if ($request->isMethod('post')) {
             $data = $request->input();
+            //$validator = $this->validator($data);
 
             $this->create($data);
             return redirect('added');
         }
+
         return view('auth.register');
     }
+
+
 
     public function added()
     {

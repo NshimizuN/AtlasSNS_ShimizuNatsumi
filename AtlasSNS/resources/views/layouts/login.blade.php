@@ -26,7 +26,7 @@
         <div id="head">
             <h1><a href="/top"><img src="./images/atlas.png"></a></h1>
             <div id="accordion" class="accordion-container">
-                <p class="js-accordion-title">〇〇さん
+                <p class="accordion-title js-accordion-title">〇〇さん
                     <img src="images/arrow.png">
                 </p>
                 <!--ハンバーガーメニュー-->
@@ -49,12 +49,12 @@
                     <p>フォロー数</p>
                     <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                     <p>フォロワー数</p>
                     <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
             <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
@@ -63,6 +63,7 @@
     </footer>
     <!--jQuery-->
     <!--<script src="/AtlasSNS/public/js/jquery-3.6.1.min.js"></script>-->
+    <script src="{{ asset('/js/jquery-3.6.1.min.js') }}"></script>
     <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 

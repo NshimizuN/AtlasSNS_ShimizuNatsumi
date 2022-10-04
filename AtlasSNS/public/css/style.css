@@ -9,6 +9,7 @@ header {
     background: #186AC9;
 }
 
+
 /* headerのアコーディオンメニュー↓ */
 .accordion-container {
     position: relative;
@@ -22,7 +23,7 @@ header {
 .accordion-container .accordion-title {
     display: block;
     position: relative;
-    margin: 0;
+    margin-right: 0;
     padding: 0.625em 0.625em 0.625em 2em;
     font-size: 1.25em;
     font-weight: normal;
@@ -44,11 +45,11 @@ header {
     color: white;
 }
 
-.js-accordion-title {
+.accordion-title {
     position: relative;
 }
 
-.js-accordion-title:after {
+.accordion-title:after {
     content: "";
     position: absolute;
     right: 25px;
@@ -70,7 +71,7 @@ header {
 }
 
 .accordion-content {
-    display: none;
+    /*display: none;*/
     padding-left: 2.3125em;
 }
 

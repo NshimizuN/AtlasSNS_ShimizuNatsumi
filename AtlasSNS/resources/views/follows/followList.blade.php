@@ -2,4 +2,6 @@
 
 @section('content')
 
+{!! Form::open(['url' => '/follow-list']) !!}
+
 @endsection

@@ -8,10 +8,10 @@
 <h2>新規ユーザー登録</h2>
 
 {{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+{{ Form::text('username',null,['class' => 'input', 'placeholder' => 'admin']) }}
 
 {{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+{{ Form::text('mail',null,['class' => 'input', 'placeholder' => 'xxx@atlas.com']) }}
 
 {{ Form::label('パスワード') }}
 {{ Form::text('password',null,['class' => 'input']) }}
