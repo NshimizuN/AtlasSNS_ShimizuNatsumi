@@ -17,10 +17,17 @@
 // Route::get('/home', 'HomeController@index')->name('home');
 
 //Auth::routes();
-
+//ログイン中ページ、auth認証ずみ
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('/top', 'PostsController@index');
+  Route::get('/profile', 'UsersController@profile');
+  Route::get('/search', 'UsersController@search');
+  Route::get('/follow-list', 'FollowsController@followList');
+  Route::get('/follower-list', 'FollowsController@followerList');
+});
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
+Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/register', 'Auth\RegisterController@register');
@@ -29,15 +36,6 @@ Route::post('/register', 'Auth\RegisterController@register');
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
-//ログイン中のページ
-Route::get('/top', 'PostsController@index');
-
-Route::get('/profile', 'UsersController@profile');
-
-Route::get('/search', 'UsersController@search');
-
-Route::get('/follow-list', 'FollowsController@followList');
-Route::get('/follower-list', 'FollowsController@followerList');
 
 //ログアウト機能
 Route::get('/logout', 'Auth\LoginController@logout');
