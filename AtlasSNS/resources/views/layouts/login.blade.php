@@ -26,7 +26,7 @@
         <div id="head">
             <h1><a href="/top"><img src="./images/atlas.png"></a></h1>
             <div id="accordion" class="accordion-container">
-                <p class="accordion-title js-accordion-title">〇〇さん
+                <p class="accordion-title js-accordion-title">{{session('username')}}さん
                     <img src="images/arrow.png">
                 </p>
                 <!--ハンバーガーメニュー-->

@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     //ユーザー情報のテーブル設定
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('username', 255);
             $table->string('mail', 255);
