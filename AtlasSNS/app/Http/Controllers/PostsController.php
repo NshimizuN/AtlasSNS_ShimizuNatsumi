@@ -16,8 +16,8 @@ class PostsController extends Controller
     //
     public function index()
     {
+        $user = Auth::user(); //ログイン認証しているユーザーの取得
+        $username = Auth::user()->username;
         return view('posts.index'); // 現在認証しているユーザーを取得
-        $user = Auth::user(); //ユーザー名のセッションの取得
-        $username = Auth::username(); // 現在認証しているユーザー名を取得
     }
 }
