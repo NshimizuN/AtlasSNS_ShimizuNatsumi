@@ -18,24 +18,27 @@
 
 //Auth::routes();
 //ログイン中ページ、auth認証ずみ
-Route::group(['middleware' => 'auth'], function () {
-  Route::get('/top', 'PostsController@index');
-  Route::get('/profile', 'UsersController@profile');
-  Route::get('/search', 'UsersController@search');
-  Route::get('/follow-list', 'FollowsController@followList');
-  Route::get('/follower-list', 'FollowsController@followerList');
+Route::group(['middleware' => 'auth'], function () {  //ログイン認証しているページをくくる
+  Route::get('/top', 'PostsController@index');  //トップページ
+  Route::get('/post', 'PostsController@create')->name('post.create'); //表示用
+  Route::post('/post', 'PostsController@store')->name('post.store');  //投稿を押した時
+
+  Route::get('/profile', 'UsersController@profile');  //プロフィールページ
+  Route::get('/search', 'UsersController@search');  //検索ページ
+  Route::get('/follow-list', 'FollowsController@followList');  //フォローリスト
+  Route::get('/follower-list', 'FollowsController@followerList');  //フォロワーページ
 });
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::get('/login', 'Auth\LoginController@login')->name('login');  //ログイン前ページ
 Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register', 'Auth\RegisterController@register');
+Route::get('/register', 'Auth\RegisterController@register');  //新規登録ページ
 Route::post('/register', 'Auth\RegisterController@register');
 
-Route::get('/added', 'Auth\RegisterController@added');
+Route::get('/added', 'Auth\RegisterController@added');  //新規登録成功ページ
 Route::post('/added', 'Auth\RegisterController@added');
 
 
 //ログアウト機能
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/logout', 'Auth\LoginController@logout');  //ログアウト
