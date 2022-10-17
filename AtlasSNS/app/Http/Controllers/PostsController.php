@@ -29,14 +29,29 @@ class PostsController extends Controller
     }
 
     //投稿機能
+    //public function store(Request $request)
     public function store(Request $request)
     {
-        $post = new Post;
+        $this->validate($request, [
+            'post' => 'required|min:1|max:200',
+        ]);
+
+        //$post = new Post;
         //$post->id = $request->id;
-        $post->id = $request->session()->get('id');
-        $post->user_id = $request->user_id;
-        $post->post = $request->post;
-        $post->save();
-        return redirect()->route('post.create');
+        //$post->id = $request->session()->get('id');
+        //$post->user_id = $request->user_id;
+        $post->user_id = Auth::user()->id;  //ユーザーIDの受け渡し
+        //$post->post = $request->post;
+        //$post->save();
+
+        //return redirect()->route('post.create');
+
+        $post = $request->input('newPost');
+        \DB::table('posts')->insert([
+            'post' => $post
+        ]);
+
+        //return redirect('index');
+        return view('index');
     }
 }

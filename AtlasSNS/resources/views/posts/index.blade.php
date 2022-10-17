@@ -1,19 +1,15 @@
 @extends('layouts.login')
 
 @section('content')
-<h2>機能を実装していきましょう。</h2>
-{{session('id')}}
-<div style="width:50%; margin: 0 auto; text-align:center;">
-  <form action="{{ route('post.store') }}" method="POST">
-    <!--トークンのやつ-->
-    @csrf
-    <!--トークンのやつ-->
-    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-    <div>
-      <textarea name="content" placeholder="内容の入力"></textarea>
-    </div>
-    <button>送信</button>
-  </form>
+<div class="container">
+  <h2>機能を実装していきましょう</h2>
+  {!! Form::open(['url' => 'post/create']) !!}
+  {{Form::token()}}
+  <div class="form-group">
+    {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容']) !!}
+  </div>
+  <button type="submit" class="btn btn-success pull-right">追加</button>
+  {!! Form::close() !!}
 </div>
 
 @endsection
