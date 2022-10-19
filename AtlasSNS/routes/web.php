@@ -20,8 +20,8 @@
 //ログイン中ページ、auth認証ずみ
 Route::group(['middleware' => 'auth'], function () {  //ログイン認証しているページをくくる
   Route::get('/top', 'PostsController@index');  //トップページ
-  Route::get('/post', 'PostsController@create')->name('post.create'); //表示用
-  Route::post('/post', 'PostsController@store')->name('post.store');  //投稿を押した時
+  Route::get('post/create', 'PostsController@create'); //->name('post.create'); //表示用
+  //Route::post('post/create', 'PostsController@create'); //->name('post.store');  //投稿を押した時
 
   Route::get('/profile', 'UsersController@profile');  //プロフィールページ
   Route::get('/search', 'UsersController@search');  //検索ページ

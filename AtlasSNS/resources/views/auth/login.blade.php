@@ -1,19 +1,25 @@
 @extends('layouts.logout')
 
 @section('content')
-
 {!! Form::open(['url' => '/login']) !!}
 
-<p>AtlasSNSへようこそ</p>
+<secition id="contact">
+  <p class="ja-title">AtlasSNSへようこそ</p>
 
-{{ Form::label('e-mail') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
-{{ Form::label('password') }}
-{{ Form::password('password',['class' => 'input']) }}
+  <div class="ct-block">
+    <label class="contact-text" for="name">{{ Form::label('e-mail') }}</label>
+    {{ Form::text('mail',null,['class' => 'input']) }}
+  </div>
 
-{{ Form::submit('ログイン') }}
+  <div class="ct-block">
+    <label class="contact-text" for="name">{{ Form::label('password') }}</label>
+    {{ Form::password('password',['class' => 'input']) }}
+  </div>
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
+  {{ Form::submit('LOGIN') }}
+
+  <p><a href="/register">新規ユーザーの方はこちら</a></p>
+</secition>
 
 {!! Form::close() !!}
 

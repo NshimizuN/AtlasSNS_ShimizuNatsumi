@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <!--IEブラウザ対策-->
@@ -19,15 +20,21 @@
   <link rel="apple-touch-icon-precomposed" href="画像のURL" />
   <!--OGPタグ/twitterカード-->
 </head>
+
 <body>
-  <header>
-    <h1><img src="images/atlas.png"></h1>
-    <p>Social Network Service</p>
-  </header>
-  <div id="container">
-    @yield('content')
+  <div class="container">
+    <header>
+      <h1><img src="images/atlas.png"></h1>
+      <p id="title">Social Network Service</p>
+    </header>
+    <div class="form-container">
+
+      @yield('content')
+
+    </div>
+    <script src="JavaScriptファイルのURL"></script>
+    <script src="JavaScriptファイルのURL"></script>
   </div>
-  <script src="JavaScriptファイルのURL"></script>
-  <script src="JavaScriptファイルのURL"></script>
 </body>
+
 </html>
