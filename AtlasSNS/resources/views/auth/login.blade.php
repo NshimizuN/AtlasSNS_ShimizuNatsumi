@@ -16,9 +16,9 @@
     {{ Form::password('password',['class' => 'input']) }}
   </div>
 
-  {{ Form::submit('LOGIN') }}
+  {{Form::submit('LOGIN',['class' => 'button']) }}
 
-  <p><a href="/register">新規ユーザーの方はこちら</a></p>
+  <p class="back"><a href="/register">新規ユーザーの方はこちら</a></p>
 </secition>
 
 {!! Form::close() !!}

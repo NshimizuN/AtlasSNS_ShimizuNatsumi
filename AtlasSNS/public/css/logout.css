@@ -54,10 +54,9 @@ img {
 /*↓ログインフォーム↓*/
 
 /*フォーム背景*/
-/*#form-container {
-    background-color: black;*/
-
-
+.contact {
+    background-color: black;
+}
 
 /*AtlasSNSへようこそ*/
 .ja-title {
@@ -70,7 +69,7 @@ img {
     display: block;
     margin-top: 10px;
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 /*フォーム*/
@@ -78,9 +77,42 @@ img {
     border: 0.5px solid #000;
     font-weight: bold;
     border-radius: 5px;
-    width: 25%;
-    height: 50px;
+    width: 15%;
+    height: 30px;
     padding: 0 10px;
     margin-bottom: 10px;
     color: #fff;
+}
+
+/*ログインボタン*/
+.button {
+    display: inline-block;
+    font-size: 12pt;
+    /* 文字サイズ */
+    text-align: right;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 8px;
+    /* 余白       */
+    background: #EE3950;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: .3s;
+    /* なめらか変化 */
+    border: 2px solid #EE3950;
+    /* 枠の指定 */
+    border-radius: 5px
+        /*角丸*/
+}
+
+/*戻るボタン*/
+.back {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
 }

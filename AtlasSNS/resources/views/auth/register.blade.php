@@ -9,21 +9,29 @@
 
 <h2>新規ユーザー登録</h2>
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input', 'placeholder' => 'admin']) }}
+<div class="ct-block">
+  <label class="contact-text" for="name">{{ Form::label('ユーザー名') }}</label>
+  {{ Form::text('username',null,['class' => 'input', 'placeholder' => 'admin']) }}
+</div>
 
-{{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input', 'placeholder' => 'xxx@atlas.com']) }}
+<div class="ct-block">
+  <label class="contact-text" for="name">{{ Form::label('メールアドレス') }}</label>
+  {{ Form::text('mail',null,['class' => 'input', 'placeholder' => 'xxx@atlas.com']) }}
+</div>
 
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+<div class="ct-block">
+  <label class="contact-text" for="name"> {{ Form::label('パスワード') }}</label>
+  {{ Form::text('password',null,['class' => 'input']) }}
+</div>
 
-{{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+<div class="ct-block">
+  <label class="contact-text" for="name">{{ Form::label('パスワード確認') }}</label>
+  {{ Form::text('password_confirmation',null,['class' => 'input']) }}
+</div>
 
-{{ Form::submit('登録') }}
+{{ Form::submit('登録',['class' => 'button']) }}
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p class="back"><a href="/login">ログイン画面へ戻る</a></p>
 
 {!! Form::close() !!}
 

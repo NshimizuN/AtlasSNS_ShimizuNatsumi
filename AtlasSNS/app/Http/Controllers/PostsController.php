@@ -22,15 +22,16 @@ class PostsController extends Controller
         return view('posts.index'); // 現在認証しているユーザーを取得
     }
 
+
     //投稿を表示する
-    public function create()
-    {
-        return view('post/create');
-    }
+    //public function create()
+    //{
+    //    return view('post/index');
+    //}
 
     //投稿機能
     //public function store(Request $request)
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $this->validate($request, [
             'post' => 'required|min:1|max:200',
@@ -40,7 +41,7 @@ class PostsController extends Controller
         //$post->id = $request->id;
         //$post->id = $request->session()->get('id');
         //$post->user_id = $request->user_id;
-        $post->user_id = Auth::user()->id;  //ユーザーIDの受け渡し
+        //$post->user_id = Auth::user()->id;  //ユーザーIDの受け渡し
         //$post->post = $request->post;
         //$post->save();
 
