@@ -31,6 +31,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 80px 0;
+    /*background-color: black;*/
 }
 
 /*.wrapper {
@@ -74,6 +75,7 @@ img {
 
 /*フォーム*/
 .input {
+    color: #000000;
     border: 0.5px solid #000;
     font-weight: bold;
     border-radius: 5px;
@@ -115,4 +117,29 @@ img {
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 16px;
+}
+
+/*登録完了ページ topへ戻る*/
+.btn {
+    display: inline-block;
+    font-size: 12pt;
+    /* 文字サイズ */
+    text-align: right;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 8px;
+    /* 余白       */
+    background: #EE3950;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: .3s;
+    /* なめらか変化 */
+    border: 2px solid #EE3950;
+    /* 枠の指定 */
+    border-radius: 5px
+        /*角丸*/
 }

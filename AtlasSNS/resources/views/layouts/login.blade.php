@@ -26,7 +26,8 @@
         <div id="head">
             <h1><a href="/top"><img src="./images/atlas.png"></a></h1>
             <div id="accordion" class="accordion-container">
-                <p class="accordion-title js-accordion-title">{{session('username')}}さん
+                <!--$user->usernameで名前カラムを渡す-->
+                <p class="accordion-title js-accordion-title">{{$user->username}}さん
                     <img src="images/arrow.png">
                 </p>
                 <!--ハンバーガーメニュー-->

@@ -14,45 +14,58 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
-    //
+    //トップ画面を表示
     public function index()
     {
-        $user = Auth::user(); //ログイン認証しているユーザーの取得
-        $username = Auth::user()->username;
-        return view('posts.index'); // 現在認証しているユーザーを取得
+        $user = Auth::user(); //ログイン認証しているユーザーデータの取得
+        $post = \DB::table('posts')->get();  //postsテーブルから投稿(post)を取得
+        return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
     }
 
-
-    //投稿を表示する
-    //public function create()
-    //{
-    //    return view('post/index');
-    //}
-
-    //投稿機能
-    //public function store(Request $request)
-    public function create(Request $request)
+    //投稿を登録する機能
+    public function create(Request $request) //createメソット
     {
-        $this->validate($request, [
-            'post' => 'required|min:1|max:200',
-        ]);
-
-        //$post = new Post;
-        //$post->id = $request->id;
-        //$post->id = $request->session()->get('id');
-        //$post->user_id = $request->user_id;
-        //$post->user_id = Auth::user()->id;  //ユーザーIDの受け渡し
-        //$post->post = $request->post;
-        //$post->save();
-
-        //return redirect()->route('post.create');
-
         $post = $request->input('newPost');
-        \DB::table('posts')->insert([
-            'post' => $post
+        \DB::table('posts')->insert([  //postsテーブルに指定
+            'post' => $post,          //postカラムを持ってくる
+            'user_id' => Auth::user()->id  //user_idカラムを持ってくる
         ]);
 
-        //return redirect('index');
-        return view('index');
+        return redirect('top');  //ルーティングするよ（URL）
+        //return view('index');  //画面に表示するよ（投稿機能：表示× ルーティング○）
+    }
+
+    //投稿の編集を表示
+    public function updateForm($id)
+    {
+        //dd("123");
+        $post = \DB::table('posts')
+            ->where('id', $id)
+            ->first();
+        return view('posts.updateForm', compact('post'));
+    }
+
+    //投稿の編集処理
+    public function update(Request $request)
+    {
+        $id = $request->input('id');
+        $up_post = $request->input('upPost');
+        \DB::table('posts')
+            ->where('id', $id)
+            ->update(
+                ['post' => $up_post]
+            );
+        return redirect('index');
+    }
+
+    //削除
+    public function delete($id)
+    {
+        //dd("123");
+        \DB::table('posts')
+            ->where('id', $id)
+            ->delete();
+
+        return redirect('index');
     }
 }
