@@ -15,10 +15,26 @@
   @foreach ($post as $post)
   <td>{{$post->post}}</td>
   <!--コントローラーから渡された複数のデータを表示する-->
-  <td><a class="btn btn-primary" href="/post/{{$post->id}}/update-form">更新</a></td>
+  <!-- <td><a class="btn btn-primary" href="/post/{{$post->id}}/update-form">更新</a></td>-->
+  <div class="content">
+    <!-- 投稿の編集ボタン -->
+    <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">編集</a>
+  </div>
   <td><a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
   @endforeach
-
+  <!-- モーダルの中身 -->
+  <div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+    <div class="modal__content">
+      <form action="" method="">
+        <textarea name="" class="modal_post"></textarea>
+        <input type="hidden" name="" class="modal_id" value="">
+        <input type="submit" value="更新">
+        {{ csrf_field() }}
+      </form>
+      <a class="js-modal-close" href="">閉じる</a>
+    </div>
+  </div>
 
 
 </div>

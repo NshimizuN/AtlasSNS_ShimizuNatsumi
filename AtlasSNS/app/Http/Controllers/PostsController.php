@@ -20,6 +20,7 @@ class PostsController extends Controller
         $user = Auth::user(); //ログイン認証しているユーザーデータの取得
         $post = \DB::table('posts')->get();  //postsテーブルから投稿(post)を取得
         return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
+        posts::orderBy('created_at', 'desc')->get();  //新しい順に表示
     }
 
     //投稿を登録する機能
@@ -55,7 +56,7 @@ class PostsController extends Controller
             ->update(
                 ['post' => $up_post]
             );
-        return redirect('index');
+        return redirect('top');  //トップページへリダイレクト（URL）
     }
 
     //削除
@@ -66,6 +67,6 @@ class PostsController extends Controller
             ->where('id', $id)
             ->delete();
 
-        return redirect('index');
+        return redirect('top'); //トップページへリダイレクト（URL）
     }
 }
