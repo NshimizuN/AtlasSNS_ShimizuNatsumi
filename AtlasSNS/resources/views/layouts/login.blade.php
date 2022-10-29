@@ -27,7 +27,8 @@
             <h1><a href="/top"><img src="./images/atlas.png"></a></h1>
             <div id="accordion" class="accordion-container">
                 <!--$user->usernameで名前カラムを渡す-->
-                <p class="accordion-title js-accordion-title">{{$user->username}}さん
+                <!--<p class="accordion-title js-accordion-title">{{$user->username}}さん-->
+                <p class="accordion-title js-accordion-title">{{Auth::user()->username}}さん
                     <img src="images/arrow.png">
                 </p>
                 <!--ハンバーガーメニュー-->
