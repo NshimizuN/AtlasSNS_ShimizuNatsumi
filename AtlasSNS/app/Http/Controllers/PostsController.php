@@ -39,7 +39,7 @@ class PostsController extends Controller
     //投稿の編集を表示
     public function updateForm($id)
     {
-        //dd("123");
+        dd("123");
         $post = \DB::table('posts')
             ->where('id', $id)
             ->first();
@@ -49,6 +49,7 @@ class PostsController extends Controller
     //投稿の編集処理
     public function update(Request $request)
     {
+        //dd("123");
         $id = $request->input('id');
         $up_post = $request->input('upPost');
         \DB::table('posts')

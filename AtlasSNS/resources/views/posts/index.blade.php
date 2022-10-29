@@ -18,9 +18,10 @@
   <!-- <td><a class="btn btn-primary" href="/post/{{$post->id}}/update-form">更新</a></td>-->
   <div class="content">
     <!-- 投稿の編集ボタン -->
-    <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">編集</a>
+    <a class="js-modal-open" href="/post/{{$post->id}}/updateForm" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="image/post.png" alt="編集"></a>
   </div>
-  <td><a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
+  <!-- 投稿の削除ボタン -->
+  <td><a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="image/trash-h.png" alt="削除"></a></td>
   @endforeach
   <!-- モーダルの中身 -->
   <div class="modal js-modal">
