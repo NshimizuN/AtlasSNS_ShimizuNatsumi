@@ -18,7 +18,7 @@
   <!-- <td><a class="btn btn-primary" href="/post/{{$post->id}}/update-form">更新</a></td>-->
   <div class="content">
     <!-- 投稿の編集ボタン -->
-    <a class="js-modal-open" href="/post/{{$post->id}}/updateForm" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="image/post.png" alt="編集"></a>
+    <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="image/post.png" alt="編集"></a>
   </div>
   <!-- 投稿の削除ボタン -->
   <td><a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="image/trash-h.png" alt="削除"></a></td>
@@ -27,9 +27,11 @@
   <div class="modal js-modal">
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
-      <form action="" method="">
-        <textarea name="" class="modal_post"></textarea>
-        <input type="hidden" name="" class="modal_id" value="">
+      <form action="/post/update" method="">
+        <!--コントローラーへのリンク-->
+        <textarea name="upPost" class="modal_post"></textarea>
+        <!--コントローラーへのリンク-->
+        <input type="hidden" name="id" class="modal_id" value="">
         <input type="submit" value="更新">
         {{ csrf_field() }}
       </form>

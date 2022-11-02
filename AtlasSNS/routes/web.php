@@ -21,8 +21,7 @@
 Route::group(['middleware' => 'auth'], function () {  //ログイン認証しているページをくくる
   Route::get('/top', 'PostsController@index');  //トップページ
   Route::post('/post/create', 'PostsController@create'); //投稿用ルーティング
-  Route::get('/post/{id}/updateForm', 'PostsController@updateForm'); //投稿の編集ページへ
-  Route::post('/post/update', 'PostsController@update'); //投稿の編集完了→トップへ反映
+  Route::get('/post/update', 'PostsController@update'); //投稿の編集
   Route::get('/post/{id}/delete', 'PostsController@delete'); //投稿の削除
 
   Route::get('/profile', 'UsersController@profile');  //プロフィールページ

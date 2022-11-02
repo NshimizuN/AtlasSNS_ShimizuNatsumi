@@ -18,15 +18,16 @@ class PostsController extends Controller
     public function index()
     {
         $user = Auth::user(); //ログイン認証しているユーザーデータの取得
-        $post = \DB::table('posts')->get();  //postsテーブルから投稿(post)を取得
+        $post = \DB::table('posts')  //postsテーブルから投稿(post)を取得
+            ->orderBy('created_at', 'desc')  //新しい順に投稿を取得
+            ->get();
         return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
-        posts::orderBy('created_at', 'desc')->get();  //新しい順に表示
     }
 
     //投稿を登録する機能
     public function create(Request $request) //createメソット
     {
-        $post = $request->input('newPost');
+        $post = $request->input('newPost'); //bladeから送られてきたidを受け取ってる
         \DB::table('posts')->insert([  //postsテーブルに指定
             'post' => $post,          //postカラムを持ってくる
             'user_id' => Auth::user()->id  //user_idカラムを持ってくる
@@ -36,22 +37,12 @@ class PostsController extends Controller
         //return view('index');  //画面に表示するよ（投稿機能：表示× ルーティング○）
     }
 
-    //投稿の編集を表示
-    public function updateForm($id)
-    {
-        dd("123");
-        $post = \DB::table('posts')
-            ->where('id', $id)
-            ->first();
-        return view('posts.updateForm', compact('post'));
-    }
-
     //投稿の編集処理
     public function update(Request $request)
     {
         //dd("123");
-        $id = $request->input('id');
-        $up_post = $request->input('upPost');
+        $id = $request->input('id'); //bladeから送られてきたidを受け取ってる
+        $up_post = $request->input('upPost'); //bladeから送られてきたupPost(編集内容)を受け取ってる
         \DB::table('posts')
             ->where('id', $id)
             ->update(
