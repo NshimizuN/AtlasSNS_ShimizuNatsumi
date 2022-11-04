@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
 
   Route::get('/profile', 'UsersController@profile');  //プロフィールページ
   Route::get('/search', 'UsersController@search');  //検索ページ
+  Route::get('/search', 'UsersController@searching');  //検索ページ
   Route::get('/follow-list', 'FollowsController@followList');  //フォローリスト
   Route::get('/follower-list', 'FollowsController@followerList');  //フォロワーページ
 });
