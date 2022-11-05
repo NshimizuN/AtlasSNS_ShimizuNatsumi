@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth; //Auth認証に必要な記述
 use App\Post; //投稿機能追記
 
 class PostsController extends Controller

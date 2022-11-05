@@ -4,19 +4,20 @@
 
  {!! Form::open(['url' => '/search']) !!}
  <div>
-   <form action="{{route('./search')}}" method="GET">
+   <form action="/search" method="GET">
      @csrf
-     <input type="text" name="keyword" value="{{$keyword}}">
-     <input type="submit" value="検索">
+     <input type="text" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
+     <input type="submit" name="submit" value="検索">
    </form>
 
    <ul>
-     @foreach(@users as $user)
+     @foreach($users as $user)
      <li>
        {{$user -> username}}
      </li>
      @endforeach
    </ul>
+
  </div>
 
 
