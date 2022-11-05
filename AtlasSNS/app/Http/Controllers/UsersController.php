@@ -3,22 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth; //Auth認証に必要な記述
 
 class UsersController extends Controller
 {
     //
     public function profile()
     {
+        $user = Auth::user(); //ログイン認証しているユーザーデータの取得
         return view('users.profile');
     }
 
-
-    // public function search()
-    //{
-    //dd("123");
-    //    return view('users.search');
-    //}
     //検索機能
     public function search(Request $request)
     {
