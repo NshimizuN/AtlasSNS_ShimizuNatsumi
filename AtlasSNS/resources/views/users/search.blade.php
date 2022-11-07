@@ -1,9 +1,17 @@
+<?php
+if ($keyword->isEmpty()) {
+  <p>{{$keyword}}</p>
+} else {
+  <p>Hello</p>
+}
+?>
+
  @extends('layouts.login')
 
  @section('content')
 
  {!! Form::open(['url' => '/search']) !!}
- <div>
+ <div id="search">
    <form action="/search" method="GET">
      @csrf
      <input type="text" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
