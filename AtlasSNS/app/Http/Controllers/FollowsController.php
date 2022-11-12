@@ -17,15 +17,18 @@ class FollowsController extends Controller
     public function follow($id)
     {
         //dd("123");
-        $follower = auth()->user();
+        $follower = auth()->user(); //フォローしているか認証してる
         $request = request('id');
-         \DB::table('follows')
-        $is_following = $follower->is_Following($id);
-        if (!$is_following) {
-            $follower->follow($id);
-            return redirect('search');
+         \DB::table('follows')->insert([
+            //$is_following = $follower->is_Following($user->id);
+            //if (!$is_following) {  //もしフォローしてなかったら
+            'following_id' => $following, //following_idカラムを持ってくる
+            $following => Auth::user()->id  //ログインユーザーを$followingへ追加（ログインユーザーがフォローする）
+            'followed_id' => $followed,
+            $followed->follow($user->id)  //他ユーザーがフォローされる
+        ]);
+        return redirect('search');  //search画面へルーティング
         }
-    }
 
     //search.blade フォロー解除機能
     public function unFollow($id)
