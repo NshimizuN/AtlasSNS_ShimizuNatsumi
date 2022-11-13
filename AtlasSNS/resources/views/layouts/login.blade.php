@@ -12,7 +12,7 @@
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
-    <link rel="icon" href="画像URL" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./images/icon1.png" sizes="16x16" type="image/png" />
     <link rel="icon" href="画像URL" sizes="32x32" type="image/png" />
     <link rel="icon" href="画像URL" sizes="48x48" type="image/png" />
     <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
@@ -23,9 +23,9 @@
 
 <body>
     <header>
-        <div id="head">
-            <h1><a href="/top"><img src="./images/atlas.png"></a></h1>
-            <div id="accordion" class="accordion-container">
+        <div class="head">
+            <h1 class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></h1>
+            <id="accordion" class="accordion-container">
                 <!--$user->usernameで名前カラムを渡す-->
                 <p class="accordion-title js-accordion-title">{{Auth::user()->username}}さん
                     <img src="images/arrow.png">
@@ -38,6 +38,7 @@
                         <li><a href="/logout">ログアウト</a></li>
                     </ul>
                 </div>
+        </div>
     </header>
     <div id="row">
         <div id="container">
@@ -45,7 +46,7 @@
         </div>
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{Auth::user()->username}}さんの</p>
                 <div>
                     <p>フォロー数</p>
                     <p>〇〇名</p>

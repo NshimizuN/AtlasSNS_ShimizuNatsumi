@@ -4,32 +4,46 @@ html {}
 
 body {}
 
-/* header */
+/* ↓login.blade ヘッダー 上↓*/
 header {
     background: #186AC9;
+    height: 80px;
+    width: 1440px;
+    position: relative;
+    flex-wrap: nowrap;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 23.5px;
+    left: 20px;
+}
 
 /* headerのアコーディオンメニュー↓ */
 .accordion-container {
-    position: relative;
+    text-align: center;
+    position: absolute;
+    right: 0px;
     width: 100%;
-    border: 1px solid #0079c1;
     border-top: none;
     outline: 0;
-    cursor: pointer
+    cursor: pointer;
+
 }
 
+/*アコーディオンメニュー、ユーザー名*/
 .accordion-container .accordion-title {
-    display: block;
+    display: inline-block;
     position: relative;
-    margin-right: 0;
-    padding: 0.625em 0.625em 0.625em 2em;
-    font-size: 1.25em;
+    font-size: 1.2rem;
     font-weight: normal;
     color: #fff
         /*background: #000;*/
         cursor: pointer;
+
 }
 
 .accordion-container .accordion-title:hover,
@@ -45,17 +59,22 @@ header {
     color: white;
 }
 
+/*ユーザー名 〜〜さん*/
 .accordion-title {
     position: relative;
+    right: 100px;
+    color: #fff;
+    font-size: 1.5em;
 }
 
+/*三角*/
 .accordion-title:after {
     content: "";
-    position: absolute;
-    right: 25px;
+    position: relative;
+    right: -50px;
     top: 38%;
     transition: all 0.2s ease-in-out;
-    display: block;
+    display: inline-block;
     width: 8px;
     height: 8px;
     border-top: solid 2px #fff;
@@ -71,7 +90,8 @@ header {
 }
 
 .accordion-content {
-    /*display: none;*/
+    display: block;
+    padding-left: 20em;
     padding-left: 2.3125em;
 }
 
@@ -88,7 +108,6 @@ header {
 .btn {
     display: block;
     position: relative;
-    margin: 0;
     padding: 0.625em 0.625em 0.625em 2em;
     font-size: 1.0em;
     font-weight: normal;
@@ -97,8 +116,10 @@ header {
     cursor: pointer;
 }
 
+/* ↑login.blade ヘッダー 上↑*/
 
-/* main content */
+
+/*↓login.blade 左のメインメニュー↓*/
 #row {
     display: flex;
     flex-flow: row wrap;
@@ -143,3 +164,56 @@ header {
     transform: translate(-50%, -50%);
     width: 60%;
 }
+
+/*↑login.blade 左のメインメニュー↑*/
+
+
+/*↓index.blade 全体↓*/
+.container {}
+
+button {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+button img {
+    display: block;
+}
+
+/*↑index.blade 全体↑*/
+
+/*↓index.blade 投稿フォーム↓*/
+.form-group {
+    border-bottom: 5px solid #e0e0e0;
+}
+
+.form-control {
+    border: none;
+    width: 1140px;
+    height: 100px;
+}
+
+/*↑index.blade 投稿フォーム↑*/
+
+/*↓index.blade 投稿表示↓*/
+.view-container {
+    border-bottom: 1px solid black;
+}
+
+.content {
+    display: flex;
+}
+
+button {
+    display: block;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+button img {
+    display: block;
+}
+
+/*↑index.blade 投稿表示↑*/
