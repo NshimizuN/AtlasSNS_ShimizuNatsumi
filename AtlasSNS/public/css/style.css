@@ -119,7 +119,7 @@ h1 {
 /* ↑login.blade ヘッダー 上↑*/
 
 
-/*↓login.blade 左のメインメニュー↓*/
+/*↓login.blade 右のメインメニュー↓*/
 #row {
     display: flex;
     flex-flow: row wrap;
@@ -138,6 +138,15 @@ h1 {
 .content {
     margin: 0 auto;
     padding: 40px;
+}
+
+.btn {
+    border-radius: 5px;
+    background-color: #186AC9;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 150px;
 }
 
 .modal {
@@ -165,7 +174,7 @@ h1 {
     width: 60%;
 }
 
-/*↑login.blade 左のメインメニュー↑*/
+/*↑login.blade 右のメインメニュー↑*/
 
 
 /*↓index.blade 全体↓*/

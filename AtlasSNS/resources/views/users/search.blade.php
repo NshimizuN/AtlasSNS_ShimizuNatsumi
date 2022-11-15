@@ -24,8 +24,24 @@
 
     <li>
       {{$user -> username}}
+      @if($followlist->follow_id == $follower)
+      {{Form::open(['action' => 'FollowsController@follow'])}}
+      {{Form::hidden('id',$follower)}}
       <p class="follow-btn"><a href="/search/{{$user->id}}/follow">フォローする</a></p>
+      {{Form::close()}}
+      @endif
+
+      @foreach ($followlist as $followlist)
+      @if($followlist->follow_id == $follower)
+      {{Form::open(['action' => 'FollowsController@unFollow'])}}
+      {{Form::hidden('id',$follower)}}
       <p class="unFollow-btn"><a href="/search/{{$user->id}}/unFollow">フォロー解除</a></p>
+
+      {{Form::close()}}
+
+      @endif
+      @endforeach
+
     </li>
   </ul>
   @endif
