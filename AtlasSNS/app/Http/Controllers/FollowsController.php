@@ -17,16 +17,15 @@ class FollowsController extends Controller
     public function follow($id)
     {
         //dd("123");
-        $follower = auth()->user()->id; //$followerに他のユーザーidを代入
+        //dd("id");
         $following = Auth::user()->id; //$followingにログインユーザーidを代入
         $request = request('id');
-        $list = \DB::table('users')->get();
         $followlist = \DB::table('follows')
             ->where('following_id', '=', Auth::user()->id)
             ->get();
         \DB::table('follows')->insert([ //followsテーブルに追加
             'following_id' => $following, //followind_idカラム$followingを持ってくる
-            'followed_id' => $follower,  //followed_idカラムに$followerを持ってくる
+            'followed_id' => $id,  //followed_idカラムに$followerを持ってくる
         ]);
         return redirect('search');  //search画面へルーティング
     }
