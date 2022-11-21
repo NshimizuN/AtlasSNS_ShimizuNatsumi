@@ -19,7 +19,7 @@ class PostsController extends Controller
     {
         $user = Auth::user(); //ログイン認証しているユーザーデータの取得
         $post = \DB::table('posts')  //postsテーブルから投稿(post)を取得
-            ->orderBy('created_at', 'desc')  //新しい順に投稿を取得
+            ->orderBy('updated_at', 'desc')  //新しい順に投稿を取得
             ->get();
         return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
     }
@@ -30,7 +30,7 @@ class PostsController extends Controller
         $post = $request->input('newPost'); //bladeから送られてきたidを受け取ってる
         \DB::table('posts')->insert([  //postsテーブルに指定
             'post' => $post,          //postカラムを持ってくる
-            'user_id' => Auth::user()->id  //user_idカラムを持ってくる
+            'user_id' => Auth::user()->id,  //user_idカラムを持ってくる
         ]);
 
         return redirect('top');  //ルーティングするよ（URL）

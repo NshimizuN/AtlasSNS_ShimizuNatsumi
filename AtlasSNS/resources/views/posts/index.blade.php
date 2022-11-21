@@ -13,7 +13,9 @@
   <div class="view-container">
     <!--コントローラーから渡された複数のデータを表示する-->
     @foreach ($post as $post)
+    <td>{{$post->user_id}}</td>
     <td>{{$post->post}}</td>
+    <td>{{$post->updated_at}}</td>
     <!--コントローラーから渡された複数のデータを表示する-->
     <!-- <td><a class="btn btn-primary" href="/post/{{$post->id}}/update-form">更新</a></td>-->
     <div class="content">
