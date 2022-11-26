@@ -36,6 +36,7 @@ class FollowsController extends Controller
         //dd("123");
         \DB::table('follows')
             ->where('followed_id', $id)
+            ->where('followed_id', Auth::user()->$id)
             ->delete();
         return redirect('search');
     }
