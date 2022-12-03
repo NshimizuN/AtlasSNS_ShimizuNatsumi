@@ -16,13 +16,8 @@ class FollowsController extends Controller
     //search.blade フォロー機能
     public function follow($id)
     {
-        //dd("123");
-        //dd("id");
         $following = Auth::user()->id; //$followingにログインユーザーidを代入
         $request = request('id');
-        //$followlist = \DB::table('follows')
-        //   ->where('following_id', '=', Auth::user()->id)
-        //   ->get();
         \DB::table('follows')->insert([ //followsテーブルに追加
             'following_id' => $following, //followind_idカラム$followingを持ってくる
             'followed_id' => $id,  //followed_idカラムに$followerを持ってくる
@@ -35,8 +30,7 @@ class FollowsController extends Controller
     {
         //dd("123");
         \DB::table('follows')
-            ->where('followed_id', $id)
-            ->where('followed_id', Auth::user()->$id)
+            ->where(['followed_id' => $id, 'following_id' => Auth::user()->id])
             ->delete();
         return redirect('search');
     }
