@@ -29,7 +29,6 @@
       <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
-
         <p class="unFollow-btn"><a href="/search/{{$user->id}}/unFollow">フォロー解除</a>
       </form>
 

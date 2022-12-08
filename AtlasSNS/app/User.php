@@ -41,15 +41,15 @@ class User extends Authenticatable
     }
 
     //フォローしているか
-    public function isFollowing($user_id)
+    public function isFollowing(Int $user_id)
     {
-        return (bool) $this->follows()->where('followed_id', $user_id)->User::first(['id']);
+        return (bool) $this->follows()->where('followed_id', $user_id)->first();
     }
 
     //フォローされているか
-    public function isFollowed($user_id)
+    public function isFollowed(Int $user_id)
     {
-        return (bool) $this->follows()->where('following_id', $user_id)->User::first(['id']);
+        return (bool) $this->follows()->where('following_id', $user_id)->first();
     }
 
 
