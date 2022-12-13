@@ -61,4 +61,14 @@ class PostsController extends Controller
 
         return redirect('top'); //トップページへリダイレクト（URL）
     }
+
+    //followListへフォローしてる人のつぶやきを表示
+    public function show()
+    {
+        //dd("123");
+        // Postモデル経由でpostsテーブルのレコードを取得
+        $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
+        $posts = Post::with('user')->whereIn('id', $following_id)->get(); // フォローしているユーザーのidを元に投稿内容を取得
+        return view('follow-list', compact('posts'));
+    }
 }

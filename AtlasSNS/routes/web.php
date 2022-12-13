@@ -17,21 +17,29 @@
 // Route::get('/home', 'HomeController@index')->name('home');
 
 //Auth::routes();
-//ログイン中ページ、auth認証ずみ
+//ログイン中ページ、auth認証ずみ、
 Route::group(['middleware' => 'auth'], function () {  //ログイン認証しているページをくくる
+
+  //トップページ
   Route::get('/top', 'PostsController@index');  //トップページ
   Route::post('/post/create', 'PostsController@create'); //投稿用ルーティング
   Route::get('/post/update', 'PostsController@update'); //投稿の編集
   Route::get('/post/{id}/delete', 'PostsController@delete'); //投稿の削除
 
+  //プロフィールページ
   Route::get('/profile', 'UsersController@profile');  //プロフィールページ
 
+  //検索ページ
   Route::get('/search', 'UsersController@search');  //検索ページ 検索機能
   Route::post('/search', 'UsersController@search');  //検索ページ
   Route::get('/search/{id}/follow', 'FollowsController@follow')->name('follow');  //検索ページ フォロー機能
-  Route::get('/search/{id}/unfollow', 'FollowsController@unfollow')->name('unfollow');  //検索ページ フォロー解除
+  Route::get('/search/{id}/unFollow', 'FollowsController@unfollow')->name('unfollow');  //検索ページ フォロー解除
 
-  Route::get('/follow-list', 'FollowsController@followList');  //フォローリスト
+  //フォローリスト
+  Route::get('/follow-list', 'FollowsController@followlist');  //フォローリスト
+  Route::get('/follow-list', 'PostsController@show');  //フォローリストの表示
+
+  //フォロワーリスト
   Route::get('/follower-list', 'FollowsController@followerList');  //フォロワーページ
 });
 
