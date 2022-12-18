@@ -13,7 +13,7 @@
   <div class="view-container">
     <!--コントローラーから渡された複数のデータを表示する-->
     @foreach ($post as $post)
-    <td>{{$post->user_id}}</td>
+    <td>{{$post->user->username}}</td>
     <td>{{$post->post}}</td>
     <td>{{$post->updated_at}}</td>
     <!--コントローラーから渡された複数のデータを表示する-->

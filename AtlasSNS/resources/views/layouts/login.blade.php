@@ -48,7 +48,7 @@
             <div id="confirm">
                 <p class="user-name">{{Auth::user()->username}}さんの</p>
                 <div class="side-follow-btn">
-                    <p><span class="mgr-40">フォロー数</span>〇〇名</p>
+                    <p><span class="mgr-40">フォロー数</span>名</p>
                 </div>
                 <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div class="side-follow-btn">

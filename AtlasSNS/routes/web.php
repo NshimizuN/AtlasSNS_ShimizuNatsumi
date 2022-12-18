@@ -19,6 +19,9 @@
 //Auth::routes();
 //ログイン中ページ、auth認証ずみ、
 Route::group(['middleware' => 'auth'], function () {  //ログイン認証しているページをくくる
+  //サイドバー
+  Route::get('/top', 'FollowsController@followCounts'); //フォロー数
+  //Route::get('/login', 'PostsController@followerCounts');フォロワー数
 
   //トップページ
   Route::get('/top', 'PostsController@index');  //トップページ
@@ -33,14 +36,15 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
   Route::get('/search', 'UsersController@search');  //検索ページ 検索機能
   Route::post('/search', 'UsersController@search');  //検索ページ
   Route::get('/search/{id}/follow', 'FollowsController@follow')->name('follow');  //検索ページ フォロー機能
-  Route::get('/search/{id}/unFollow', 'FollowsController@unfollow')->name('unfollow');  //検索ページ フォロー解除
+  Route::get('/search/{id}/unfollow', 'FollowsController@unfollow')->name('unfollow');  //検索ページ フォロー解除
 
   //フォローリスト
   Route::get('/follow-list', 'FollowsController@followlist');  //フォローリスト
-  Route::get('/follow-list', 'PostsController@show');  //フォローリストの表示
+  Route::get('/follow-list', 'PostsController@followShow');  //フォローリストの表示
 
   //フォロワーリスト
   Route::get('/follower-list', 'FollowsController@followerList');  //フォロワーページ
+  Route::get('/follower-list', 'PostsController@followerShow');  //フォロワーリストの表示
 });
 
 //ログアウト中のページ

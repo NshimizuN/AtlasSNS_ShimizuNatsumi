@@ -18,8 +18,10 @@ class PostsController extends Controller
     public function index()
     {
         $user = Auth::user(); //ログイン認証しているユーザーデータの取得
-        $post = \DB::table('posts')  //postsテーブルから投稿(post)を取得
-            ->orderBy('updated_at', 'desc')  //新しい順に投稿を取得
+        //$following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
+        //$post = Post::orderBy('updated_at', 'desc')->with//('user')->whereIn('id', $following_id)->get(); // フォローしているユーザーのidを元に投稿内容を取得
+        $post = Post:: //Postモデルからpostsテーブルを取得
+            orderBy('updated_at', 'desc')  //新しい順に投稿を取得
             ->get();
         return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
     }
@@ -63,12 +65,22 @@ class PostsController extends Controller
     }
 
     //followListへフォローしてる人のつぶやきを表示
-    public function show()
+    public function followShow()
     {
         //dd("123");
         // Postモデル経由でpostsテーブルのレコードを取得
         $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
         $posts = Post::with('user')->whereIn('id', $following_id)->get(); // フォローしているユーザーのidを元に投稿内容を取得
-        return view('follow-list', compact('posts'));
+        return view('follows.followList', compact('posts'));
+    }
+
+    //followerListへフォローされてる人のつぶやきを表示
+    public function followerShow()
+    {
+        //dd("123");
+        // Postモデル経由でpostsテーブルのレコードを取得
+        $followed_id = Auth::user()->follows()->pluck('following_id'); // フォローされているユーザーのidを取得
+        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('id', $followed_id)->get(); // フォローされているユーザーのidを元に投稿内容を取得
+        return view('follows.followList', compact('posts'));
     }
 }
