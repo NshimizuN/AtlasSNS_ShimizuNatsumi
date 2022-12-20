@@ -4,11 +4,13 @@
 {!! Form::open(['url' => '/follower-list']) !!}
 
 @foreach($posts as $post)
-<td>名前：{{ $post->user->username }}</td>
-<td>投稿内容：{{ $post->post }}</td>
-<td>{{$post->updated_at}}</td>
+<p>名前：{{ $post->user->username }}</p>
+<p>投稿内容：{{ $post->post }}</p>
+<p>{{$post->updated_at}}</p>
 @endforeach
 
 
 
 @endsection
+
+</html>

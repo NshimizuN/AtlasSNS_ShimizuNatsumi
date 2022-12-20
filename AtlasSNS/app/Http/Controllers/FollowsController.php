@@ -50,10 +50,10 @@ class FollowsController extends Controller
     }
 
     //サイドバーにフォロー数を表示
-    public function followCounts()
-    {
-        dd("123");
-        $follows = follow::where('following_id', Auth::id())->get(); // フォローしているユーザーのidを取得
-        return view('follows.login', compact('follows'));
-    }
+    // public function followCounts()
+    //  {
+    // dd("123");
+    // $follows = follow::where('following_id', Auth::id())->get(); // フォローしているユーザーのidを取得
+    //  return view('follows.login', compact('follows'));
+    //  }
 }

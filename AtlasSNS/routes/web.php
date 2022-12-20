@@ -20,7 +20,7 @@
 //ログイン中ページ、auth認証ずみ、
 Route::group(['middleware' => 'auth'], function () {  //ログイン認証しているページをくくる
   //サイドバー
-  Route::get('/top', 'FollowsController@followCounts'); //フォロー数
+  // Route::get('/login', 'FollowsController@followCounts'); //フォロー数
   //Route::get('/login', 'PostsController@followerCounts');フォロワー数
 
   //トップページ

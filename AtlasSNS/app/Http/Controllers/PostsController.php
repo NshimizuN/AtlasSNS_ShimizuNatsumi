@@ -15,16 +15,23 @@ class PostsController extends Controller
     }
 
     //トップ画面を表示
-    public function index()
+    public function index(Post $posts)
     {
-        $user = Auth::user(); //ログイン認証しているユーザーデータの取得
-        //$following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
-        //$post = Post::orderBy('updated_at', 'desc')->with//('user')->whereIn('id', $following_id)->get(); // フォローしているユーザーのidを元に投稿内容を取得
-        $post = Post:: //Postモデルからpostsテーブルを取得
-            orderBy('updated_at', 'desc')  //新しい順に投稿を取得
+        $posts = User::select('users.username', 'posts.id', 'posts.post', 'posts.updated_at')
+            ->join('posts', 'posts.user_id', '=', 'users.id')
+            ->orderBy('updated_at', 'desc')
             ->get();
-        return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
+        return view('posts.index', compact('posts'));
+        //$user = Auth::user(); //ログイン認証しているユーザーデータの取得
+        //$following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
+        //$post = Post:: //Postモデルからpostsテーブルを取得
+        //    orderBy('updated_at', 'desc')  //新しい順に投稿を取得
+        //    ->get();
+        //return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
     }
+
+    //dd($following_id);
+    // $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $following_id)->get(); //Postテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
 
     //投稿を登録する機能
     public function create(Request $request) //createメソット
@@ -70,7 +77,8 @@ class PostsController extends Controller
         //dd("123");
         // Postモデル経由でpostsテーブルのレコードを取得
         $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
-        $posts = Post::with('user')->whereIn('id', $following_id)->get(); // フォローしているユーザーのidを元に投稿内容を取得
+        //dd($following_id);
+        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $following_id)->get(); //Postテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
         return view('follows.followList', compact('posts'));
     }
 
@@ -79,8 +87,9 @@ class PostsController extends Controller
     {
         //dd("123");
         // Postモデル経由でpostsテーブルのレコードを取得
-        $followed_id = Auth::user()->follows()->pluck('following_id'); // フォローされているユーザーのidを取得
-        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('id', $followed_id)->get(); // フォローされているユーザーのidを元に投稿内容を取得
-        return view('follows.followList', compact('posts'));
+        $followed_id = Auth::user()->followers()->pluck('followed_id'); // フォローされているユーザーのidを取得
+        //dd($followed_id);
+        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $followed_id)->get(); // フォローされているユーザーのidを元に投稿内容を取得
+        return view('follows.followerList', compact('posts'));
     }
 }
