@@ -17,17 +17,13 @@ class PostsController extends Controller
     //トップ画面を表示
     public function index(Post $posts)
     {
-        $posts = User::select('users.username', 'posts.id', 'posts.post', 'posts.updated_at')
-            ->join('posts', 'posts.user_id', '=', 'users.id')
-            ->orderBy('updated_at', 'desc')
-            ->get();
-        return view('posts.index', compact('posts'));
-        //$user = Auth::user(); //ログイン認証しているユーザーデータの取得
-        //$following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
-        //$post = Post:: //Postモデルからpostsテーブルを取得
-        //    orderBy('updated_at', 'desc')  //新しい順に投稿を取得
-        //    ->get();
-        //return view('posts.index', ['user' => $user, 'post' => $post]); // 現在認証しているユーザーを取得
+        $user = Auth::user(); //ログイン認証しているユーザーデータの取得
+        $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
+        $post = Post::orderBy('updated_at', 'desc') //編集された順
+            ->with('user')->whereIn('user_id', $user) //userテーブル、user_idカラムのログインユーザーのidが入ってる
+            ->orwhere('user_id', $following_id) //さらにフォローしているユーザー
+            ->get(); //取得する
+        return view('posts.index', ['post' => $post]); // 現在認証しているユーザーを取得
     }
 
     //dd($following_id);
