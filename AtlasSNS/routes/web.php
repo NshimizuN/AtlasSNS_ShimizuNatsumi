@@ -29,6 +29,9 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
   Route::get('/post/update', 'PostsController@update'); //投稿の編集
   Route::get('/post/{id}/delete', 'PostsController@delete'); //投稿の削除
 
+  //サイドバー
+  Route::get('/top', 'FollowsController@followPostsCounts'); //フォロー数
+
   //プロフィールページ
   Route::get('/profile', 'UsersController@profile');  //プロフィールページ
 

@@ -17,11 +17,11 @@ class PostsController extends Controller
     //トップ画面を表示
     public function index(Post $posts)
     {
-        $user = Auth::user(); //ログイン認証しているユーザーデータの取得
         $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
+        //dd($following_id);
         $post = Post::orderBy('updated_at', 'desc') //編集された順
-            ->with('user')->whereIn('user_id', $user) //userテーブル、user_idカラムのログインユーザーのidが入ってる
-            ->orwhere('user_id', $following_id) //さらにフォローしているユーザー
+            ->with('user')->whereIn('user_id', $following_id) //userフォローしている人を取得
+            ->orWhere('user_id', Auth::user()->id) //またはログインユーザーのidを取得
             ->get(); //取得する
         return view('posts.index', ['post' => $post]); // 現在認証しているユーザーを取得
     }
@@ -66,6 +66,7 @@ class PostsController extends Controller
 
         return redirect('top'); //トップページへリダイレクト（URL）
     }
+
 
     //followListへフォローしてる人のつぶやきを表示
     public function followShow()
