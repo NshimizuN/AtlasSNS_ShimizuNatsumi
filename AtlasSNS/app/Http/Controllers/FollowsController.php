@@ -36,12 +36,7 @@ class FollowsController extends Controller
         return redirect('search'); //search画面へルーティング
     }
 
-    //フォロー数
-    public function followPostsCounts()
-    {
-        //dd('123');
-        return $this->hasMany('App\Follow');
-    }
+
 
     //follow.balde フォローリスト
     public function followlist()

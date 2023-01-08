@@ -82,10 +82,9 @@ class RegisterController extends Controller
     //     return view("auth.register");
     // }
 
+    //バリデーションの判断
     public function register(Request $request)
     {
-
-
         if ($request->isMethod('post')) {
             $data = $request->input();
             $validator = $this->validator($data); //バリデーションの呼び出し
@@ -99,7 +98,6 @@ class RegisterController extends Controller
             //入力に成功したら、新規登録できるよ
             $this->create($data); //createメソッドを呼び出し新規ユーザー登録
             $request->session()->put('username', $data['username']); //セッションの保存
-            //$request->session()->put('id', $data['id']); //セッションの保存
             return redirect('added');
         }
 

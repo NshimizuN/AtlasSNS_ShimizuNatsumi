@@ -29,11 +29,10 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
   Route::get('/post/update', 'PostsController@update'); //投稿の編集
   Route::get('/post/{id}/delete', 'PostsController@delete'); //投稿の削除
 
-  //サイドバー
-  Route::get('/top', 'FollowsController@followPostsCounts'); //フォロー数
 
   //プロフィールページ
-  Route::get('/profile', 'UsersController@profile');  //プロフィールページ
+  Route::get('/profile', 'UsersController@profile');  //プロフィールページを表示
+  Route::get('/profile/{id}/update', 'UsersController@profileup');  //プロフィールページ
 
   //検索ページ
   Route::get('/search', 'UsersController@search');  //検索ページ 検索機能

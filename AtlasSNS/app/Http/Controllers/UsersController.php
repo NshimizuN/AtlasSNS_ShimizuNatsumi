@@ -34,4 +34,39 @@ class UsersController extends Controller
         $users = $query->get();  //メソッドを代入
         return view('users.search', ['keyword' => $keyword, 'users' => $users]);  //検索ワード、ユーザーを表示させる（bladeへ渡す）
     }
+
+    //プロフィール バリデーションの内容
+    // protected function validator(array $data)
+    //{
+    //    return Validator::make($data, [
+    //       'username' => 'required|string|min:2|max:12',
+    //       'mail' => 'required|string|email:rfc,dns|min:5|max:40|unique:users',
+    //       'password' => 'required|string|min:8|max:20|confirmed|confirmed',
+    //      'bio' => 'string|max:150',
+    //      'images' => 'file|mines:jpg,png,bmp,gif,svg',
+    //   ]);
+
+    //プロフィール 編集機能
+    public function profileup(Request $request)
+    {
+        //dd("123");
+        $id = $request->input('id');
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+        $bio = $request->input('bio');
+        //$images = $request->input('images');
+        \DB::table('users')
+            ->where('id', $id)
+            ->update(
+                [
+                    'username' => $username,
+                    'mail' => $mail,
+                    'password' => $password,
+                    'bio' => $bio,
+                    //'images' => $images
+                ]
+            );
+        return redirect('top');  //トップページへリダイレクト（URL）
+    }
 }

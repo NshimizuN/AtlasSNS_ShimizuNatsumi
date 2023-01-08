@@ -28,13 +28,13 @@
             <id="accordion" class="accordion-container">
                 <!--$user->usernameで名前カラムを渡す-->
                 <p class="accordion-title js-accordion-title">{{Auth::user()->username}}さん
-                    <img src="images/arrow.png">
+                    <img src="/images/icon1.png">
                 </p>
                 <!--ハンバーガーメニュー-->
                 <div class="accordion-content">
                     <ul>
                         <li><a href="/top">ホーム</a></li>
-                        <li><a href="/profile">プロフィール</a></li>
+                        <li><a href="/profile">プロフィール編集</a></li>
                         <li><a href="/logout">ログアウト</a></li>
                     </ul>
                 </div>
@@ -48,11 +48,11 @@
             <div id="confirm">
                 <p class="user-name">{{Auth::user()->username}}さんの</p>
                 <div class="side-follow-btn">
-                    <p><span class="mgr-40">フォロー数</span>{{ Auth::user()->id == follows()->following_id->get()->count() }}名</p>
+                    <p><span class="mgr-40">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
                 </div>
                 <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div class="side-follow-btn">
-                    <p><span class="mgr-30">フォロー数</span>〇〇名</p>
+                    <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->followers->count() }}名</p>
                 </div>
                 <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
