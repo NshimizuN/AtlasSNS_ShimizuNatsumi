@@ -28,9 +28,12 @@
             <id="accordion" class="accordion-container">
                 <!--$user->usernameで名前カラムを渡す-->
                 <p class="accordion-title js-accordion-title">{{Auth::user()->username}}さん
+                    @if(Auth::user()->image == null)
                     <img src="/images/icon1.png">
-                </p>
-                <!--ハンバーガーメニュー-->
+                    @else
+                    <img src=" {{ asset('storage/チョコレート (1).png')}}">
+                    @endif
+                    <!--ハンバーガーメニュー-->
                 <div class="accordion-content">
                     <ul>
                         <li><a href="/top">ホーム</a></li>

@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
 
   //プロフィールページ
   Route::get('/profile', 'UsersController@profile');  //プロフィールページを表示
-  Route::get('/profile/{id}/update', 'UsersController@profileup');  //プロフィールページ
+  Route::post('/profile/update', 'UsersController@store');  //プロフィールフォーム
 
   //検索ページ
   Route::get('/search', 'UsersController@search');  //検索ページ 検索機能

@@ -2,16 +2,17 @@
 
 @section('content')
 
-<form action="/profile" method="get">
+<form action="/profile/update" method="post" enctype="multipart/form-data">
+  @csrf
 
   <div class="ct-block">
     <label class="contact-text" for="name">{{ Form::label('username') }}</label>
-    {{ Form::text('username',null,['class' => 'input', 'placeholder' => 'admin']) }}
+    {{ Form::text('username',null,['class' => 'input', 'placeholder' => Auth::user()->username]) }}
   </div>
 
   <div class="ct-block">
     <label class="contact-text" for="name">{{ Form::label('mail address') }}</label>
-    {{ Form::text('mail',null,['class' => 'input', 'placeholder' => '']) }}
+    {{ Form::text('mail',null,['class' => 'input', 'placeholder' => Auth::user()->mail]) }}
   </div>
 
   <div class="ct-block">
@@ -26,15 +27,16 @@
 
   <div class="ct-block">
     <label class="contact-text" for="name">{{ Form::label('bio') }}</label>
-    {{ Form::text('bio',null,['class' => 'input']) }}
+    {{ Form::text('bio',null,['class' => 'input','placeholder' => Auth::user()->bio]) }}
   </div>
 
   <div class="ct-block">
-    <label class="contact-text" for="name">{{ Form::label('icon image') }}</label>
-    {{ Form::file('images',null,['class' => 'form-control']) }}
+    <label class="contact-text" for="images">{{ Form::label('icon image') }}</label>
+    {{ Form::file('imgpath',null,['class' => 'form-control']) }}
   </div>
 
   {{ Form::submit('更新',['class' => 'button']) }}
 
-  {!! Form::close() !!}
-  @endsection
+</form>
+
+@endsection

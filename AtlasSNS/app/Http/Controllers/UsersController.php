@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //Auth認証に必要な記述
+use Illuminate\Support\Facades\Hash; //passwordのハッシュ化
 
 class UsersController extends Controller
 {
@@ -47,26 +48,30 @@ class UsersController extends Controller
     //   ]);
 
     //プロフィール 編集機能
-    public function profileup(Request $request)
+    public function store(Request $request)
     {
         //dd("123");
-        $id = $request->input('id');
+        $id = Auth::id();
         $username = $request->input('username');
         $mail = $request->input('mail');
         $password = $request->input('password');
         $bio = $request->input('bio');
-        //$images = $request->input('images');
+        $filename = $request->imgpath->getClientOriginalName(); //画像のオリジナルネームを取得
+        $img = $request->imgpath->storeAs('', $filename, 'public'); //画像を保存して、そのパスを$imgに保存。第三引数に'public'を指定
+        $user = new User(); //ユーザークラスのインスタンス化
+        $data = $user->create(['imgpath' => $img]);
+        //dd($img);
         \DB::table('users')
             ->where('id', $id)
             ->update(
                 [
                     'username' => $username,
                     'mail' => $mail,
-                    'password' => $password,
-                    'bio' => $bio,
+                    'password' => Hash::make($password),
+                    'bio' => $bio
                     //'images' => $images
                 ]
             );
-        return redirect('top');  //トップページへリダイレクト（URL）
+        return redirect('top', compact('data'));  //トップページへリダイレクト（URL）
     }
 }
