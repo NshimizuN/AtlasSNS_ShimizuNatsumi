@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //Auth認証に必要な記述
 use Illuminate\Support\Facades\Hash; //passwordのハッシュ化
@@ -58,8 +59,6 @@ class UsersController extends Controller
         $bio = $request->input('bio');
         $filename = $request->imgpath->getClientOriginalName(); //画像のオリジナルネームを取得
         $img = $request->imgpath->storeAs('', $filename, 'public'); //画像を保存して、そのパスを$imgに保存。第三引数に'public'を指定
-        $user = new User(); //ユーザークラスのインスタンス化
-        $data = $user->create(['imgpath' => $img]);
         //dd($img);
         \DB::table('users')
             ->where('id', $id)
@@ -68,10 +67,10 @@ class UsersController extends Controller
                     'username' => $username,
                     'mail' => $mail,
                     'password' => Hash::make($password),
-                    'bio' => $bio
-                    //'images' => $images
+                    'bio' => $bio,
+                    'images' => $img
                 ]
             );
-        return redirect('top', compact('data'));  //トップページへリダイレクト（URL）
+        return redirect('top');  //トップページへリダイレクト（URL）
     }
 }

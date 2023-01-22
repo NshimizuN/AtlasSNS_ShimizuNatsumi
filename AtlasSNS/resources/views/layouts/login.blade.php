@@ -28,12 +28,13 @@
             <id="accordion" class="accordion-container">
                 <!--$user->usernameで名前カラムを渡す-->
                 <p class="accordion-title js-accordion-title">{{Auth::user()->username}}さん
-                    @if(Auth::user()->image == null)
+                    @if(Auth::user()->images == "dawn.png")
                     <img src="/images/icon1.png">
                     @else
-                    <img src=" {{ asset('storage/チョコレート (1).png')}}">
+                    <img src=" {{ asset('storage/'.Auth::user()->images)}}">
                     @endif
-                    <!--ハンバーガーメニュー-->
+                </p>
+                <!--ハンバーガーメニュー-->
                 <div class="accordion-content">
                     <ul>
                         <li><a href="/top">ホーム</a></li>
@@ -50,14 +51,17 @@
         <div id="side-bar">
             <div id="confirm">
                 <p class="user-name">{{Auth::user()->username}}さんの</p>
+
                 <div class="side-follow-btn">
-                    <p><span class="mgr-40">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
+                    <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
                 </div>
                 <p class="btn"><a href="/follow-list">フォローリスト</a></p>
-                <div class="side-follow-btn">
-                    <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->followers->count() }}名</p>
+
+                <div class="side-follower-btn">
+                    <p><span class="mgr-30">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
                 </div>
                 <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+
             </div>
             <hr>
             <p class="search-btn"><a href="/search">ユーザー検索</a></p>

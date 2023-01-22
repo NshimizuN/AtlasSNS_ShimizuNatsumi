@@ -69,15 +69,15 @@ class PostsController extends Controller
 
 
     //followListへフォローしてる人のつぶやきを表示
-    public function followShow()
-    {
-        //dd("123");
-        // Postモデル経由でpostsテーブルのレコードを取得
-        $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
-        //dd($following_id);
-        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $following_id)->get(); //Postテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
-        return view('follows.followList', compact('posts'));
-    }
+    //public function followShow()
+    //{
+    //dd("123");
+    // Postモデル経由でpostsテーブルのレコードを取得
+    //   $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
+    //dd($following_id);
+    // $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $following_id)->get(); //Postテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
+    //return view('follows.followList', compact('posts'));
+    //    }
 
     //followerListへフォローされてる人のつぶやきを表示
     public function followerShow()

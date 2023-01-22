@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; ////Auth認証に必要な記述
+use App\Post; //Postモデルを使用
+use App\User; //Userモデルを使用
 
 class FollowsController extends Controller
 {
@@ -36,26 +38,27 @@ class FollowsController extends Controller
         return redirect('search'); //search画面へルーティング
     }
 
-
-
-    //follow.balde フォローリスト
+    //follow.balde アイコンリスト、投稿リストの表示
     public function followlist()
     {
-        //dd("123");
-        return view('follows.followlist');
+        // dd("123");
+        // followsテーブルのレコードを取得
+        $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
+        //dd($following_id);
+        $following_users = User::orderBy('updated_at', 'desc')->whereIn('id', $following_id)->get(); //userテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
+        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $following_id)->get(); //Postテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
+        return view('follows.followList', compact('following_users', 'posts'));
     }
 
-    //follor.baldeフォロワーリスト
+    //follower.balde アイコンリスト、投稿リストの表示
     public function followerList()
     {
-        return view('follows.followerList');
+        // dd("123");
+        // followsテーブルのレコードを取得
+        $followed_id = Auth::user()->follows()->pluck('following_id'); // フォローされているユーザーのidを取得
+        //dd($following_id);
+        $followed_users = User::orderBy('updated_at', 'desc')->whereIn('id', $followed_id)->get(); //userテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
+        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $followed_id)->get(); // フォローされているユーザーのidを元に投稿内容を取得
+        return view('follows.followerList', compact('followed_users', 'posts'));
     }
-
-    //サイドバーにフォロー数を表示
-    // public function followCounts()
-    //  {
-    // dd("123");
-    // $follows = follow::where('following_id', Auth::id())->get(); // フォローしているユーザーのidを取得
-    //  return view('follows.login', compact('follows'));
-    //  }
 }

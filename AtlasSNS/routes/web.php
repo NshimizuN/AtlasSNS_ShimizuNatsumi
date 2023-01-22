@@ -35,18 +35,16 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
   Route::post('/profile/update', 'UsersController@store');  //プロフィールフォーム
 
   //検索ページ
-  Route::get('/search', 'UsersController@search');  //検索ページ 検索機能
   Route::post('/search', 'UsersController@search');  //検索ページ
+  Route::get('/search', 'UsersController@search');  //検索ページ
   Route::get('/search/{id}/follow', 'FollowsController@follow')->name('follow');  //検索ページ フォロー機能
   Route::get('/search/{id}/unfollow', 'FollowsController@unfollow')->name('unfollow');  //検索ページ フォロー解除
 
   //フォローリスト
-  Route::get('/follow-list', 'FollowsController@followlist');  //フォローリスト
-  Route::get('/follow-list', 'PostsController@followShow');  //フォローリストの表示
+  Route::get('/follow-list', 'FollowsController@followlist');
 
   //フォロワーリスト
-  Route::get('/follower-list', 'FollowsController@followerList');  //フォロワーページ
-  Route::get('/follower-list', 'PostsController@followerShow');  //フォロワーリストの表示
+  Route::get('/follower-list', 'FollowsController@followerList');  //フォロワーページへ推移
 });
 
 //ログアウト中のページ
