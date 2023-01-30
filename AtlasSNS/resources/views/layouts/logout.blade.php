@@ -22,17 +22,19 @@
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1><img src="images/atlas.png"></h1>
-      <p id="title">Social Network Service</p>
-    </header>
+  <section>
+    <div class="container">
+      <header>
+        <h1><img src="images/atlas.png"></h1>
+        <p id="title">Social Network Service</p>
+      </header>
 
-    @yield('content')
+      @yield('content')
 
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
-  </div>
+      <script src="JavaScriptファイルのURL"></script>
+      <script src="JavaScriptファイルのURL"></script>
+    </div>
+  </section>
 </body>
 
 </html>

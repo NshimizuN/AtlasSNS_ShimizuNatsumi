@@ -55,7 +55,7 @@ class FollowsController extends Controller
     {
         // dd("123");
         // followsテーブルのレコードを取得
-        $followed_id = Auth::user()->follows()->pluck('following_id'); // フォローされているユーザーのidを取得
+        $followed_id = Auth::user()->followers()->pluck('following_id'); // フォローされているユーザーのidを取得
         //dd($following_id);
         $followed_users = User::orderBy('updated_at', 'desc')->whereIn('id', $followed_id)->get(); //userテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
         $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $followed_id)->get(); // フォローされているユーザーのidを元に投稿内容を取得

@@ -24,7 +24,7 @@ class User extends Authenticatable
     // フォロワー→フォロー
     public function followers()
     {
-        return $this->belongsToMany('App\User', 'follows', 'following_id', 'followed_id');
+        return $this->belongsToMany('App\User', 'follows', 'followed_id', 'following_id');
         //(関連モデル,テーブル,関連ID1,関連ID2)
     }
 
