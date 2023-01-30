@@ -5,6 +5,10 @@
 <form action="/profile/update" method="post" enctype="multipart/form-data">
   @csrf
 
+  @foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+  @endforeach
+
   <div class="ct-block">
     <label class="contact-text" for="name">{{ Form::label('username') }}</label>
     {{ Form::text('username',null,['class' => 'input', 'placeholder' => Auth::user()->username]) }}
