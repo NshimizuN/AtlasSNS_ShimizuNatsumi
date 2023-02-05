@@ -15,10 +15,10 @@
       <!--コントローラーから渡された複数のデータを表示する-->
       @foreach ($post as $post)
       <div class="post-icon">
-        @if(Auth::user()->images == "dawn.png")
+        @if($post->user->images == "dawn.png")
         <img src="/images/icon1.png" width="50" height="50">
         @else
-        <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="50" height="50">
+        <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
         @endif
       </div>
       <div class="post-time">{{$post->updated_at}}</div>

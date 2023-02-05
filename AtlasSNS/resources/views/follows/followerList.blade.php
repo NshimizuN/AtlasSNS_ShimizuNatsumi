@@ -17,13 +17,22 @@
 
 <!--フォロワーリスト-->
 @foreach($posts as $post)
+<!--$postsから$postを抽出-->
+
+<div class="follower">
+  <a href="{{ route('user-profile', ['id' => $post->user->id]) }}">
+    @if($post->user->images == "dawn.png")
+    <img src="/images/icon1.png" width="50" height="50">
+    @else
+    <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
+    @endif
+  </a>
+  <p>{{ $post->user->username }}</p>
+  <p>{{ $post->post }}</p>
+  <p>{{$post->updated_at}}</p>
 </div>
-<p>名前：{{ $post->user->username }}</p>
-<p>投稿内容：{{ $post->post }}</p>
-<p>{{$post->updated_at}}</p>
+
 @endforeach
-
-
 
 @endsection
 

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\User; //Userモデルを使用
+use App\Post; //Postモデルを使用
 use Illuminate\Support\Facades\Validator; //バリデーショん
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //Auth認証に必要な記述
 use Illuminate\Support\Facades\Hash; //passwordのハッシュ化
+
 
 class UsersController extends Controller
 {
@@ -67,12 +69,9 @@ class UsersController extends Controller
         $mail = $request->input('mail');
         $password = $request->input('password');
         $bio = $request->input('bio');
+        $img = $request->file_get_contents('images');
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withInput()
-                ->withErrors($validator);
-        } else {
+        if (isset($img)) {
             $filename = $request->imgpath->getClientOriginalName(); //画像のオリジナルネームを取得
             $img = $request->imgpath->storeAs('', $filename, 'public'); //画像を保存して、そのパスを$imgに保存。第三引数に'public'を指定
         }
@@ -86,9 +85,19 @@ class UsersController extends Controller
                     'mail' => $mail,
                     'password' => Hash::make($password),
                     'bio' => $bio,
-                    'images' => $img
+                    'images' => $img,
                 ]
             );
         return redirect('top');  //トップページへリダイレクト（URL）
+    }
+
+    //ユーザーのプロフィール画面
+    public function userProfile($id)
+    {
+        //dd("123");
+        $users = \DB::table('users')->where('id', '=', $id)->get();
+        //dd($users);
+        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $id)->get();
+        return view('users.userProfile', compact('users', 'posts')); //usersフォルダ.userProfileページ,usersカラム,postsカラム
     }
 }
