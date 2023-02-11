@@ -48,8 +48,8 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
 
   //ユーザーのプロフィールページ
   Route::get('/user-profile/{id}', 'UsersController@userProfile')->name('user-profile');  //ユーザーのプロフィールへ推移
-  Route::get('/user-profile/{id}/userfollow', 'FollowsController@userfollow')->name('follow');  //ユーザープロフィールページ フォロー機能
-  Route::get('/user-profile/{id}/userunfollow', 'FollowsController@userunfollow')->name('unfollow');  //ユーザープロフィール フォロー解除
+  Route::get('/user-profile/{id}/userfollow', 'FollowsController@userfollow')->name('userfollow');  //ユーザープロフィールページ フォロー機能
+  Route::get('/user-profile/{id}/userunfollow', 'FollowsController@userunfollow')->name('userunfollow');  //ユーザープロフィール フォロー解除
 
 
 });
