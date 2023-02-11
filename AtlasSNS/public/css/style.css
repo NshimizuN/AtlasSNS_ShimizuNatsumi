@@ -17,6 +17,12 @@ body {
         sans-serif;
 }
 
+.container {
+    max-width: 1024px;
+    width: 90%;
+}
+
+
 /*ベージ上部*/
 .top-container {
     height: 200px;
@@ -76,12 +82,13 @@ h1 {
 }
 
 /*右側 フォローボタンなど*/
-#side-bar {
-    white-space: nowrap;
+.side-bar {
     display: flex;
-    flex: 0 0 19%;
-    border-left: 1px solid #727272;
+    width: 500px;
+    height: 500px;
+    border-left: 2px solid #727272;
     z-index: 3;
+    white-space: nowrap
 }
 
 
@@ -242,13 +249,7 @@ h1 {
 
 /*↓フォローリストとか↓*/
 
-#side-bar {
-    white-space: nowrap;
-}
 
-.confirm {
-    position: relative;
-}
 
 .user-name {
     display: flex;

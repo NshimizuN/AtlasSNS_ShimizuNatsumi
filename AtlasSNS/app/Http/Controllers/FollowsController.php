@@ -61,4 +61,29 @@ class FollowsController extends Controller
         $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $followed_id)->get(); // フォローされているユーザーのidを元に投稿内容を取得
         return view('follows.followerList', compact('followed_users', 'posts'));
     }
+
+    //userProfile.blade フォロー機能
+    public function userfollow($id)
+    {
+        dd("123");
+        $following = Auth::user()->id; //$followingにログインユーザーidを代入
+        $request = request('id');
+        \DB::table('follows')->insert([ //followsテーブルに追加
+            'following_id' => $following, //followind_idカラム$followingを持ってくる
+            'followed_id' => $id,  //followed_idカラムに$followerを持ってくる
+        ]);
+        return redirect('user-profile');  //search画面へルーティング
+    }
+
+    //search.blade フォロー解除機能
+    public function userunfollow($id)
+    {
+        dd("123");
+        \DB::table('follows')->where([ //followsテーブルを指定
+            'followed_id' => $id, //followed_idカラムのフォローされてるID
+            'following_id' => Auth::user()->id //following_idのログインユーザーのIDを
+        ])
+            ->delete(); //消す
+        return redirect('user-profile'); //search画面へルーティング
+    }
 }

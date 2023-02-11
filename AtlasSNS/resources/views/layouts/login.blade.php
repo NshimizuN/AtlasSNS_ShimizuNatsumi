@@ -23,34 +23,33 @@
 
 <body>
     <header>
-        <section class="head">
 
-            <h1 class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></h1>
+        <h1 class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></h1>
 
-            <div class="user">
-                <div class="username">{{Auth::user()->username}} さん
+        <div class="user">
+            <div class="username">{{Auth::user()->username}} さん
+            </div>
+            <div class="icon">
+                @if(Auth::user()->images == "dawn.png")
+                <img src="/images/icon1.png" width="70" height="70">
+                @else
+                <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
+                @endif
+            </div>
+            </span>
+
+            <id="accordion" class="accordion-container">
+                <!--$user->usernameで名前カラムを渡す-->
+                <p class="accordion-title js-accordion-title">
+                </p>
+                <!--ハンバーガーメニュー-->
+                <div class="accordion-content">
+                    <ul>
+                        <li class="accordion-list"><a href="/top">ホーム</a></li>
+                        <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
+                        <li class="accordion-list"><a href="/logout">ログアウト</a></li>
+                    </ul>
                 </div>
-                <div class="icon">
-                    @if(Auth::user()->images == "dawn.png")
-                    <img src="/images/icon1.png" width="70" height="70">
-                    @else
-                    <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
-                    @endif
-                </div>
-                </span>
-
-                <id="accordion" class="accordion-container">
-                    <!--$user->usernameで名前カラムを渡す-->
-                    <p class="accordion-title js-accordion-title">
-                    </p>
-                    <!--ハンバーガーメニュー-->
-                    <div class="accordion-content">
-                        <ul>
-                            <li class="accordion-list"><a href="/top">ホーム</a></li>
-                            <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
-                            <li class="accordion-list"><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </div>
     </header>
     @yield('content')
     <div class="side-bar">
@@ -68,9 +67,7 @@
             <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
 
         </div>
-        <hr>
         <p class="search-btn"><a href="/search">ユーザー検索</a></p>
-    </div>
     </div>
     <footer>
     </footer>
