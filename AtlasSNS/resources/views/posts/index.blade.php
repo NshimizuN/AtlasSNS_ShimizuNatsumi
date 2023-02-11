@@ -1,16 +1,20 @@
 @extends('layouts.login')
 
 @section('content')
+
 <div class="container">
+
+  <!--投稿フォーム-->
   {!! Form::open(['url' => 'post/create']) !!}
   {{Form::token()}}
-  <div class="form-group">
+  <div class="top-container">
     {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
     <button><input type="image" src="./images/post.png" alt="投稿" width="80" height="80"></button>
+    {!! Form::close() !!}
   </div>
-  {!! Form::close() !!}
 
-  <div class="view-container">
+  <!--投稿リスト-->
+  <div class="bottom-container">
     <div class="post-container">
       <!--コントローラーから渡された複数のデータを表示する-->
       @foreach ($post as $post)
@@ -54,7 +58,7 @@
     </div>
   </div>
 
-</div>
+  </>
 
 
-@endsection
+  @endsection

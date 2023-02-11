@@ -47,10 +47,9 @@ Route::group(['middleware' => 'auth'], function () {  //ログイン認証して
   Route::get('/follower-list', 'FollowsController@followerList');  //フォロワーページへ推移
 
   //ユーザーのプロフィールページ
-
   Route::get('/user-profile/{id}', 'UsersController@userProfile')->name('user-profile');  //ユーザーのプロフィールへ推移
-  Route::get('/user-profile/{id}/follow', 'FollowsController@follow')->name('follow');  //検索ページ フォロー機能
-  Route::get('/user-profile/{id}/unfollow', 'FollowsController@unfollow')->name('unfollow');  //検索ページ フォロー解除
+
+
 });
 
 //ログアウト中のページ

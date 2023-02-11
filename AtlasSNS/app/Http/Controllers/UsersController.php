@@ -64,19 +64,31 @@ class UsersController extends Controller
         ]);
 
         //dd("123");
-        $id = Auth::id();
-        $username = $request->input('username');
+        $id = Auth::id(); //ログインユーザー
+        $username = $request->input('username'); //入力したデータを取得
         $mail = $request->input('mail');
         $password = $request->input('password');
         $bio = $request->input('bio');
-        $img = $request->file_get_contents('images');
+        $img = $request->imgpath; //画像データを取得(name属性imgpath)
 
-        if (isset($img)) {
+        $validator->validate(); //バリデーションを適用
+
+        //画像保存の分岐
+        if (isset($img)) { //$imgにデータがあれば
             $filename = $request->imgpath->getClientOriginalName(); //画像のオリジナルネームを取得
             $img = $request->imgpath->storeAs('', $filename, 'public'); //画像を保存して、そのパスを$imgに保存。第三引数に'public'を指定
+
+            //画像を更新する
+            \DB::table('users')
+                ->where('id', $id)
+                ->update(
+                    [
+                        'images' => $img,
+                    ]
+                );
         }
-        //dd($img);
-        $validator->validate();
+
+        //画像以外を更新する
         \DB::table('users')
             ->where('id', $id)
             ->update(
@@ -85,7 +97,7 @@ class UsersController extends Controller
                     'mail' => $mail,
                     'password' => Hash::make($password),
                     'bio' => $bio,
-                    'images' => $img,
+                    //'images' => $img,
                 ]
             );
         return redirect('top');  //トップページへリダイレクト（URL）
@@ -95,9 +107,9 @@ class UsersController extends Controller
     public function userProfile($id)
     {
         //dd("123");
-        $users = \DB::table('users')->where('id', '=', $id)->get();
+        $users = \DB::table('users')->where('id', '=', $id)->get(); //渡されたIDと同じユーザーを取得
         //dd($users);
-        $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $id)->get();
+        $posts = Post::orderBy('updated_at', 'desc')->with('user')->where('user_id', '=', $id)->get();
         return view('users.userProfile', compact('users', 'posts')); //usersフォルダ.userProfileページ,usersカラム,postsカラム
     }
 }

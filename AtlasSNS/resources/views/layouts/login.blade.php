@@ -51,30 +51,26 @@
                             <li class="accordion-list"><a href="/logout">ログアウト</a></li>
                         </ul>
                     </div>
-            </div>
     </header>
-    <div id="row">
-        <div id="container">
-            @yield('content')
-        </div>
-        <div id="side-bar">
-            <div class="confirm">
-                <p class="user-name">{{Auth::user()->username}}さんの</p>
+    @yield('content')
+    <div class="side-bar">
+        <div class="confirm">
+            <p class="user-name">{{Auth::user()->username}}さんの</p>
 
-                <div class="side-follow-btn">
-                    <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
-                </div>
-                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
-
-                <div class="side-follow-btn">
-                    <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
-                </div>
-                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
-
+            <div class="side-follow-btn">
+                <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
             </div>
-            <hr>
-            <p class="search-btn"><a href="/search">ユーザー検索</a></p>
+            <p class="btn"><a href="/follow-list">フォローリスト</a></p>
+
+            <div class="side-follow-btn">
+                <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
+            </div>
+            <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+
         </div>
+        <hr>
+        <p class="search-btn"><a href="/search">ユーザー検索</a></p>
+    </div>
     </div>
     <footer>
     </footer>
