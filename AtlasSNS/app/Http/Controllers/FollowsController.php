@@ -65,25 +65,25 @@ class FollowsController extends Controller
     //userProfile.blade フォロー機能
     public function userfollow($id)
     {
-        dd("123");
+        //dd("123");
         $following = Auth::user()->id; //$followingにログインユーザーidを代入
         $request = request('id');
         \DB::table('follows')->insert([ //followsテーブルに追加
             'following_id' => $following, //followind_idカラム$followingを持ってくる
             'followed_id' => $id,  //followed_idカラムに$followerを持ってくる
         ]);
-        return redirect('/user-profile/{id}');  //search画面へルーティング
+        return redirect('user-profile')->with(compact('id'));  //userProfile.blade画面へルーティング
     }
 
-    //search.blade フォロー解除機能
+    //userProfile.blade フォロー解除機能
     public function userunfollow($id)
     {
-        dd("123");
+        //dd("123");
         \DB::table('follows')->where([ //followsテーブルを指定
             'followed_id' => $id, //followed_idカラムのフォローされてるID
             'following_id' => Auth::user()->id //following_idのログインユーザーのIDを
         ])
             ->delete(); //消す
-        return redirect('/user-profile/{id}'); //search画面へルーティング
+        return redirect('user-profile')->with(compact('id')); //userProfile.blade画面へルーティング
     }
 }

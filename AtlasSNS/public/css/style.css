@@ -9,6 +9,7 @@ html {
 
 body {
     /*ページの基本設定*/
+    position: relative;
     font-size: 1rem;
     /*文字サイズ規格*/
     font-family: "YuGothic",
@@ -26,13 +27,18 @@ body {
 /*ベージ上部*/
 .top-container {
     height: 200px;
+    width: 1080px;
     flex: 0 0 90%;
     border-bottom: 5px solid #e0e0e0;
+    background-color: #00aaa7;
 }
+
 
 /*ページ下部*/
 .bottom-container {
+    width: 1080px;
     flex: 0 0 80%;
+    background-color: antiquewhite;
 }
 
 /* ↓login.blade ヘッダー 上↓*/
@@ -51,6 +57,7 @@ h1 {
     align-items: center;
     position: absolute;
     left: 20px;
+    top: 30px;
 }
 
 /*右部 ユーザー名,アイコン、アコーディオンメニュー*/
@@ -79,16 +86,6 @@ h1 {
     margin-right: 0;
     margin-left: auto;
     width: 10%;
-}
-
-/*右側 フォローボタンなど*/
-.side-bar {
-    display: flex;
-    width: 500px;
-    height: 500px;
-    border-left: 2px solid #727272;
-    z-index: 3;
-    white-space: nowrap
 }
 
 
@@ -168,12 +165,14 @@ h1 {
 
 .accordion-content {
     display: block;
-    padding: 20px 29px 20px 29px;
+    padding: 20px 20px 20px 20px;
+    width: 600px;
     margin: 2.4em 0;
     font-weight: normal;
     border: solid 1px #000000;
     background: #fff;
     font-size: 1.8rem;
+    z-index: 3;
 }
 
 .accordion-list {
@@ -184,12 +183,14 @@ h1 {
 
 
 
+
 /* headerのアコーディオンメニュー↑ */
 
 /*サイドバーのメニュー*/
 /*フォロー、フォロワーボタン*/
 .btn {
     display: block;
+    left: 150px;
     position: relative;
     padding: 0.625em 0.625em 0.625em 2em;
     font-size: 1.0em;
@@ -198,6 +199,26 @@ h1 {
     background: #0079c1;
     cursor: pointer;
 }
+
+/*右側 フォローボタンなど*/
+
+.confim {
+    border-bottom: 1px solid #727272;
+}
+
+.side-bar {
+    position: relative;
+    left: 1085px;
+    /* bottom: 370px;*/
+    display: flex;
+    width: 350px;
+    height: 500px;
+    border-left: 1px solid #727272;
+    z-index: 2;
+    white-space: nowrap;
+    background-color: pink;
+}
+
 
 /* ↑login.blade ヘッダー 上↑*/
 
@@ -250,7 +271,6 @@ h1 {
 /*↓フォローリストとか↓*/
 
 
-
 .user-name {
     display: flex;
     padding: 20px 0px 20px 10px;
@@ -283,6 +303,9 @@ h1 {
 }
 
 .search-btn {
+    position: absolute;
+    top: 350px;
+    left: 80px;
     border: 1px solid;
     border-radius: 5px;
     background-color: #206ccc;
@@ -290,6 +313,7 @@ h1 {
     text-align: center;
     color: white;
     width: 150px;
+    height: 15px;
     font-size: 15px;
     margin-right: 50px;
     margin-left: auto;
@@ -388,14 +412,6 @@ button img {
 .follows-container {}
 
 /*↓フォローアイコンリスト↓*/
-.follow-iconlist,
-.follower-iconlist,
-.user-profile {
-    border-bottom: 5px solid #e0e0e0;
-    height: 180px;
-    display: flex;
-}
-
 .followlist,
 .followerlist {
     line-height: 100px;
@@ -415,3 +431,11 @@ button img {
     margin-left: auto;
     margin-right: auto;
 }
+
+/*↑follow.blade↑*/
+
+
+
+/*↓follower.blade↓*/
+
+/*↑follower.blade↑*/

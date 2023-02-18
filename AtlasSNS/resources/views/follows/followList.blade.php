@@ -9,7 +9,7 @@
 
     <!--フォローアイコン-->
     <div class="top-container">
-      <h1 class="followlist">Follow list</h1>
+      <h2 class="followlist">Follow list</h2>
       <div class="follow-iconbox">
         @foreach($following_users as $following_user)
         <!--$userから$follow_userを抽出-->

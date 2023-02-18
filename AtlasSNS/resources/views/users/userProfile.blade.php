@@ -25,19 +25,18 @@
         @if(Auth::id() != $user->id)
         <ul>
           <li>
-            {{$user -> username}}
             @if (auth()->user()->isFollowing($user->id))
-            <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
+            <form action="{{ route('userunfollow', ['id' => $user->id]) }}" method="POST">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
-              <p class="unfollow-btn"><a href="/user-profile/{{$user->id}}/unfollow">フォロー解除</a>
+              <p class="userunfollow-btn"><a href="/user-profile/{{$user->id}}/userunfollow">フォロー解除</a>
             </form>
 
             @else
-            <form action="{{ route('follow', ['id' => $user->id]) }}" method="POST">
+            <form action="{{ route('userfollow', ['id' => $user->id]) }}" method="POST">
               {{ csrf_field() }}
 
-              <p class="follow-btn"><a href="/user-profile/{{$user->id}}/follow">フォローする</a></p>
+              <p class="userfollow-btn"><a href="/user-profile/{{$user->id}}/userfollow">フォローする</a></p>
             </form>
             @endif
           </li>
@@ -52,20 +51,23 @@
   @foreach($posts as $post)
 
   <div class="bottom-container">
-    @if($post->user->images == "dawn.png")
-    <img src="/images/icon1.png" width="50" height="50">
-    @else
-    <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
-    @endif
+    <div class="post-container">
+      <div class="user-profile">
+        <div class="post-icon">
+          @if($post->user->images == "dawn.png")
+          <img src="/images/icon1.png" width="50" height="50">
+          @else
+          <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
+          @endif
+        </div>
+        <div class="post-time">{{$post->updated_at}}</div>
+        <div class="post-name">{{ $post->user->username }}</div>
+        <div class="post">{{ $post->post }}</div>
+      </div>
+      @endforeach
 
-    <p>{{ $post->user->username }}</p>
-    <p>{{ $post->post }}</p>
-    <p>{{ $post->updated_at }}</p>
-  </div>
-
-  @endforeach
-
-  @endsection
+      @endsection
+    </div>
   </div>
 
   </html>
