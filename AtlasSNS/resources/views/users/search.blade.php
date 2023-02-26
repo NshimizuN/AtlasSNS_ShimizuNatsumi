@@ -12,10 +12,12 @@
         @csrf
         <input type="text" class="search-form" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
         <button class="submit"><input type="submit" src="./image/" value="検索"></button>
-        @if(isset( $keyword ))
-        <p>検索ワード：{{$keyword}}</p>
-        @else
-        @endif
+        <div class="search-word">
+          @if(isset( $keyword ))
+          <p class="word">検索ワード：{{$keyword}}</p>
+          @else
+          @endif
+        </div>
       </form>
     </div>
   </div>

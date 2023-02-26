@@ -545,7 +545,7 @@ button img {
 .search-form {
     position: absolute;
     height: 50px;
-    width: 400px;
+    width: 300px;
     left: 100px;
     top: 100px;
     border-radius: 5px;
@@ -554,8 +554,18 @@ button img {
 
 .submit {
     position: absolute;
-    left: 530px;
+    left: 430px;
     top: 110px;
+}
+
+.search-word {
+    position: absolute;
+    left: 680px;
+    top: 115px;
+}
+
+.word {
+    font-size: 1.5em;
 }
 
 .user-box {

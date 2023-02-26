@@ -48,7 +48,7 @@
         <!-- 投稿の編集ボタン -->
         <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width="40" height="40"></a>
         <!-- 投稿の削除ボタン -->
-        <a class="btn-delete" onmouseover="mouseOn();" onmouseout="mouseOff();" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="./images/trash-h.png" alt="削除" width="53" height="53"></a>
+        <a class="btn-delete" onmouseover="mouseOn();" onmouseout="mouseOff();" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img id="img1" src="./images/trash-h.png" alt="削除" width="53" height="53"></a>
       </div>
       @endif
       <div class="post">{{$post->post}}</div>

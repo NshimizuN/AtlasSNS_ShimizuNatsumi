@@ -47,13 +47,13 @@ $(function () {
 //マウスオーバー時の処理
 function mouseOn() {
   var obj = document.getElementById("img1");
-  obj.src = "trash.png";
+  obj.src = "./images/trash.png";
 }
 
 //マウスアウト時の処理
 function mouseOff() {
   var obj = document.getElementById("img1");
-  obj.src = "trash-h.png";
+  obj.src = "./images/trash-h.png";
 }
 
 //window.alert("aaa");
