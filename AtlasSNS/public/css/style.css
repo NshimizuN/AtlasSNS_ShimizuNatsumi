@@ -21,24 +21,7 @@ body {
 .container {
     max-width: 1024px;
     width: 90%;
-}
-
-
-/*ベージ上部*/
-.top-container {
-    height: 200px;
-    width: 1080px;
-    flex: 0 0 90%;
-    border-bottom: 5px solid #e0e0e0;
-    background-color: #00aaa7;
-}
-
-
-/*ページ下部*/
-.bottom-container {
-    width: 1080px;
-    flex: 0 0 80%;
-    background-color: antiquewhite;
+    border-right: 1px solid #727272;
 }
 
 /* ↓login.blade ヘッダー 上↓*/
@@ -182,12 +165,9 @@ h1 {
 }
 
 
-
-
 /* headerのアコーディオンメニュー↑ */
 
-/*サイドバーのメニュー*/
-/*フォロー、フォロワーボタン*/
+/*サイドバーのメニュー↓*/
 .btn {
     display: block;
     left: 150px;
@@ -200,27 +180,103 @@ h1 {
     cursor: pointer;
 }
 
-/*右側 フォローボタンなど*/
-
-.confim {
-    border-bottom: 1px solid #727272;
-}
-
 .side-bar {
     position: relative;
-    left: 1085px;
-    /* bottom: 370px;*/
+    left: 1086px;
     display: flex;
-    width: 350px;
+    width: 353px;
     height: 500px;
-    border-left: 1px solid #727272;
     z-index: 2;
     white-space: nowrap;
     background-color: pink;
 }
 
 
-/* ↑login.blade ヘッダー 上↑*/
+.user-name {
+    display: flex;
+    padding: 20px 0px 20px 20px;
+    font-size: 15px;
+}
+
+.confirm {
+    position: absolute;
+}
+
+.follow-btn-box {}
+
+.mgr-30 {
+    margin-right: 55px;
+    margin-bottom: 40px;
+}
+
+.mgr-40 {
+    margin-right: 40px;
+}
+
+.side-follow-btn1 {
+    position: absolute;
+    padding: 10px 0px 80px 20px;
+    font-size: 15px;
+}
+
+.side-follow-btn2 {
+    position: relative;
+    padding: 100px 0px 20px 20px;
+    font-size: 15px;
+}
+
+
+.followlist-btn1 {
+    position: absolute;
+    left: 180px;
+    top: 95px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #206ccc;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 120px;
+    height: 15px;
+    font-size: 15px;
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+.followlist-btn2 {
+    position: absolute;
+    left: 180px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #206ccc;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 120px;
+    height: 15px;
+    font-size: 15px;
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+.search-btn {
+    position: absolute;
+    top: 350px;
+    left: 90px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #206ccc;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 150px;
+    height: 15px;
+    font-size: 15px;
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+/* ↑サイドバーのメニュー ↑*/
 
 
 /*↓login.blade 右のメインメニュー↓*/
@@ -232,6 +288,7 @@ h1 {
 .content {
     margin: 0 auto;
     padding: 40px;
+    position: relative;
 }
 
 .btn {
@@ -263,24 +320,30 @@ h1 {
     left: 50%;
     padding: 40px;
     position: absolute;
+    border-radius: 15px;
+    height: 200px;
+    width: 250px;
+    z-index: 5;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
 }
 
+.modal_post {
+    position: absolute;
+    height: 150px;
+    width: 800px;
+    left: 70px;
+}
+
+.modai__btn {
+    position: absolute;
+    top: 200px;
+    left: 820px;
+}
+
 /*↓フォローリストとか↓*/
 
-
-.user-name {
-    display: flex;
-    padding: 20px 0px 20px 10px;
-    font-size: 15px;
-}
-
-.side-follow-btn {
-    padding: 20px 0px 20px 10px;
-    font-size: 15px;
-}
 
 .btn {
     border: 1px solid;
@@ -294,32 +357,31 @@ h1 {
     margin-left: auto;
 }
 
-.mgr-40 {
-    margin-right: 40px;
-}
-
-.mgr-30 {
-    margin-right: 40px;
-}
-
-.search-btn {
-    position: absolute;
-    top: 350px;
-    left: 80px;
-    border: 1px solid;
-    border-radius: 5px;
-    background-color: #206ccc;
-    padding: 10px;
-    text-align: center;
-    color: white;
-    width: 150px;
-    height: 15px;
-    font-size: 15px;
-    margin-right: 50px;
-    margin-left: auto;
-}
 
 /*↑login.blade 右のメインメニュー↑*/
+
+/*body共通部分↓*/
+/*ベージ上部*/
+.top-container {
+    position: relative;
+    width: 1085px;
+    height: 250px;
+    flex: 0 0 90%;
+    border-bottom: 5px solid #e0e0e0;
+    background-color: #00aaa7;
+    border-right: 1px solid #727272;
+}
+
+
+/*ページ下部*/
+.bottom-container {
+    position: relative;
+    width: 1085px;
+    flex: 0 0 80%;
+    background-color: antiquewhite;
+}
+
+/*body共通部分↑*/
 
 
 /*↓index.blade 全体↓*/
@@ -341,10 +403,31 @@ button img {
     border-bottom: 5px solid #e0e0e0;
 }
 
+.post-form {
+    position: absolute;
+    background-color: #00aaa7;
+    width: 1085px;
+}
+
+.form-icon {
+    position: absolute;
+    top: 70px;
+    left: 110px;
+}
+
 .form-control {
+    position: absolute;
     border: none;
-    width: 800px;
+    width: 700px;
     height: 100px;
+    top: 70px;
+    left: 190px;
+}
+
+.post-btn {
+    position: absolute;
+    top: 110px;
+    left: 880px;
 }
 
 /*↑index.blade 投稿フォーム↑*/
@@ -354,28 +437,33 @@ button img {
     /* border-bottom: 1px solid black;*/
 }
 
-/*投稿リスト*/
-
 .post-container {
-    position: relative;
+    position: absolute;
+    background-color: antiquewhite;
+    width: 1085px;
+    border-right: 1px solid #727272;
 }
 
 .post-icon {
     display: block;
     position: absolute;
-    left: 230px;
-    margin-top: 10px;
+    left: 150px;
+    margin-top: 20px;
 }
 
 .post-name {
-    padding: 20px 300px;
+    padding: 30px 250px 10px 250px;
     font-size: 1.0rem;
     font-weight: bold;
 }
 
 .post {
-    padding: 10px 300px;
+    padding: 10px 250px;
     font-size: 95%;
+    height: 60px;
+    height: 100px;
+    width: 500px;
+    border-bottom: 1px solid #000000;
 }
 
 .post-time {
@@ -391,8 +479,22 @@ button img {
     display: flex;
     position: absolute;
     right: 95px;
-    margin-top: 45px;
+    margin-top: 50px;
 }
+
+.btn-delete {
+    display: flex;
+    position: absolute;
+    right: 0px;
+}
+
+.js-modal-open {
+    display: flex;
+    position: absolute;
+    right: 55px;
+    top: 5px;
+}
+
 
 button {
     display: flex;
@@ -407,7 +509,7 @@ button img {
 
 /*↑index.blade 投稿表示↑*/
 
-/*↓follow.blade↓*/
+/*↓follow,follower.blade↓*/
 
 .follows-container {}
 
@@ -422,20 +524,72 @@ button img {
     left: 20px;
     font-weight: bold;
     font-size: 1.5rem;
+    padding: 20px 0;
 }
 
 .follow-iconbox,
 .follower-iconbox {
+    position: absolute;
     display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+    padding: 15px 15px;
+    top: 25%;
+    left: 40%;
 }
 
-/*↑follow.blade↑*/
+/*↑follow,follower.blade↑*/
 
 
 
-/*↓follower.blade↓*/
+/*↓search.blade↓*/
+.search-form {
+    position: absolute;
+    height: 50px;
+    width: 400px;
+    left: 100px;
+    top: 100px;
+    border-radius: 5px;
+    border-color: #727272;
+}
 
-/*↑follower.blade↑*/
+.submit {
+    position: absolute;
+    left: 530px;
+    top: 110px;
+}
+
+.user-box {
+    position: absolute;
+    background-color: antiquewhite;
+    width: 1085px;
+    border-right: 1px solid #727272;
+}
+
+.followbtn-box {
+    padding: 10px 250px;
+    height: 60px;
+    height: 100px;
+    width: 500px;
+}
+
+.search-icon {
+    display: block;
+    position: absolute;
+    left: 300px;
+    margin-top: 20px;
+}
+
+.search-name {
+    display: block;
+    position: absolute;
+}
+
+.follows-btn {
+    display: block;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 60px;
+    left: 500px;
+}
+
+/*↑search.blade↑*/

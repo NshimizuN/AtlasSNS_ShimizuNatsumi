@@ -55,17 +55,17 @@
     <div class="side-bar">
         <div class="confirm">
             <p class="user-name">{{Auth::user()->username}}さんの</p>
+            <div class="follow-btn-box">
+                <div class="side-follow-btn1">
+                    <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
+                </div>
+                <p class="followlist-btn1"><a href="/follow-list">フォローリスト</a></p>
 
-            <div class="side-follow-btn">
-                <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
+                <div class="side-follow-btn2">
+                    <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
+                </div>
+                <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="/follow-list">フォローリスト</a></p>
-
-            <div class="side-follow-btn">
-                <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
-            </div>
-            <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
-
         </div>
         <p class="search-btn"><a href="/search">ユーザー検索</a></p>
     </div>

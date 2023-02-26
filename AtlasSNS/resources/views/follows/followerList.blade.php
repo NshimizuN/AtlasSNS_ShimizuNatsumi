@@ -21,25 +21,24 @@
   </div>
 
   <!--フォロワーリスト-->
-  @foreach($posts as $post)
-  <!--$postsから$postを抽出-->
-
   <div class="bottom-container">
     <div class="post-container">
-      <div class="follower">
-        <div class="post-icon">
-          <a href="{{ route('user-profile', ['id' => $post->user->id]) }}">
-            @if($post->user->images == "dawn.png")
-            <img src="/images/icon1.png" width="50" height="50">
-            @else
-            <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
-            @endif
-          </a>
-        </div>
-        <div class="post-time">{{$post->updated_at}}</div>
-        <div class="post-name">{{ $post->user->username }}</div>
-        <div class="post">{{ $post->post }}</div>
+      @foreach($posts as $post)
+      <!--$postsから$postを抽出-->
+
+
+      <div class="post-icon">
+        <a href="{{ route('user-profile', ['id' => $post->user->id]) }}">
+          @if($post->user->images == "dawn.png")
+          <img src="/images/icon1.png" width="50" height="50">
+          @else
+          <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
+          @endif
+        </a>
       </div>
+      <div class="post-time">{{$post->updated_at}}</div>
+      <div class="post-name">{{ $post->user->username }}</div>
+      <div class="post">{{ $post->post }}</div>
 
       @endforeach
 

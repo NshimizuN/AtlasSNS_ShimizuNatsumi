@@ -3,7 +3,7 @@
 @section('content')
 {!! Form::open(['url' => '/login']) !!}
 
-<secition id="contact">
+<secition id="login-content">
   <p class="ja-title">AtlasSNSへようこそ</p>
 
   <div class="ct-block">

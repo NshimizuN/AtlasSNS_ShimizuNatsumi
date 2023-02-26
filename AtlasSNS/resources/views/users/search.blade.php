@@ -10,8 +10,8 @@
     <div class="top-container">
       <form action="/search" method="GET">
         @csrf
-        <input type="text" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
-        <input type="submit" name="submit" value="検索">
+        <input type="text" class="search-form" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
+        <button class="submit"><input type="submit" src="./image/" value="検索"></button>
         @if(isset( $keyword ))
         <p>検索ワード：{{$keyword}}</p>
         @else
@@ -23,30 +23,38 @@
 
   <!--検索結果リスト、フォローボタン-->
   <div class="bottom-container">
-    @foreach($users as $user)
-    @if(Auth::id() != $user->id)
-    <ul>
+    <div class="user-box">
 
-      <li>
-        {{$user -> username}}
-        @if (auth()->user()->isFollowing($user->id))
-        <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
-          {{ csrf_field() }}
-          {{ method_field('DELETE') }}
-          <p class="unfollow-btn"><a href="/search/{{$user->id}}/unfollow">フォロー解除</a>
-        </form>
+      @foreach($users as $user)
 
+      <div class="search-icon">
+        @if($user->images == "dawn.png")
+        <img src="/images/icon1.png" width="70" height="70">
         @else
-        <form action="{{ route('follow', ['id' => $user->id]) }}" method="POST">
-          {{ csrf_field() }}
-
-          <p class="follow-btn"><a href="/search/{{$user->id}}/follow">フォローする</a></p>
-        </form>
+        <img src=" {{ asset('storage/'.$user->images)}}" width="70" height="70">
         @endif
-      </li>
-    </ul>
-    @endif
-    @endforeach
+      </div>
+
+      <div class="search-name">
+        {{$user -> username}}
+      </div>
+
+      <div class="followbtn-box">
+        @if(Auth::id() != $user->id)
+        <ul class="follows-btn">
+          <li>
+
+            @if (auth()->user()->isFollowing($user->id))
+            <p class="unfollow-btn"><a href="/search/{{$user->id}}/unfollow">フォロー解除</a>
+              @else
+            <p class="follow-btn"><a href="/search/{{$user->id}}/follow">フォローする</a></p>
+            @endif
+          </li>
+        </ul>
+        @endif
+      </div>
+      @endforeach
+    </div>
   </div>
 
 

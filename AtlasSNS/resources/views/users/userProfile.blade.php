@@ -26,18 +26,14 @@
         <ul>
           <li>
             @if (auth()->user()->isFollowing($user->id))
-            <form action="{{ route('userunfollow', ['id' => $user->id]) }}" method="POST">
-              {{ csrf_field() }}
-              {{ method_field('DELETE') }}
-              <p class="userunfollow-btn"><a href="/user-profile/{{$user->id}}/userunfollow">フォロー解除</a>
-            </form>
 
-            @else
-            <form action="{{ route('userfollow', ['id' => $user->id]) }}" method="POST">
-              {{ csrf_field() }}
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <p class="userunfollow-btn"><a href="/search/{{$user->id}}/unfollow">フォロー解除</a>
 
-              <p class="userfollow-btn"><a href="/user-profile/{{$user->id}}/userfollow">フォローする</a></p>
-            </form>
+              @else
+              {{ csrf_field() }}
+            <p class="userfollow-btn"><a href="/search/{{$user->id}}/follow">フォローする</a></p>
             @endif
           </li>
         </ul>

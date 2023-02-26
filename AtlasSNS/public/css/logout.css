@@ -62,8 +62,11 @@ img {
 /*↓ログインフォーム↓*/
 
 /*フォーム背景*/
-.contact {
+
+#login-content {
     background-color: black;
+    height: 100px;
+    width: 100px;
 }
 
 /*AtlasSNSへようこそ*/

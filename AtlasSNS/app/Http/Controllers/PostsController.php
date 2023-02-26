@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //Auth認証に必要な記述
+use Illuminate\Support\Facades\Validator; //バリデーショん
 use App\Post; //投稿機能追記
 
 class PostsController extends Controller
@@ -32,12 +33,15 @@ class PostsController extends Controller
     //投稿を登録する機能
     public function create(Request $request) //createメソット
     {
+        $validator = Validator::make($request->all(), [
+            'post' => 'required|string|min:1|max:200',
+        ]); //バリデーション
         $post = $request->input('newPost'); //bladeから送られてきたidを受け取ってる
         \DB::table('posts')->insert([  //postsテーブルに指定
             'post' => $post,          //postカラムを持ってくる
             'user_id' => Auth::user()->id,  //user_idカラムを持ってくる
         ]);
-
+        $validator->validate(); //バリデーションを適用
         return redirect('top');  //ルーティングするよ（URL）
         //return view('index');  //画面に表示するよ（投稿機能：表示× ルーティング○）
     }
@@ -45,6 +49,9 @@ class PostsController extends Controller
     //投稿の編集処理
     public function update(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'post' => 'required|string|min:1|max:200',
+        ]); //バリデーション
         //dd("123");
         $id = $request->input('id'); //bladeから送られてきたidを受け取ってる
         $up_post = $request->input('upPost'); //bladeから送られてきたupPost(編集内容)を受け取ってる
@@ -53,6 +60,7 @@ class PostsController extends Controller
             ->update(
                 ['post' => $up_post]
             );
+        $validator->validate(); //バリデーションを適用
         return redirect('top');  //トップページへリダイレクト（URL）
     }
 

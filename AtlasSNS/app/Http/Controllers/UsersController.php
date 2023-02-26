@@ -24,9 +24,6 @@ class UsersController extends Controller
     {
         //dd("123");
         $user = Auth::user(); //ログイン認証しているユーザーデータの取得
-        //$followlist = \DB::table('follows')
-        //   ->where('following_id', '=', Auth::user()->id)
-        //  ->get();
         $keyword = $request->input('keyword'); //入力した検索ワードを取得
         $query = \DB::table('users'); //usersテーブルを取得
         if (!empty($keyword)) {  //もしキーワードがあったら
