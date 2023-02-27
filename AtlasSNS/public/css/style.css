@@ -575,13 +575,6 @@ button img {
     border-right: 1px solid #727272;
 }
 
-.followbtn-box {
-    padding: 10px 250px;
-    height: 60px;
-    height: 100px;
-    width: 500px;
-}
-
 .search-icon {
     display: block;
     position: absolute;
@@ -592,14 +585,183 @@ button img {
 .search-name {
     display: block;
     position: absolute;
+    left: 400px;
+    margin-top: 50px;
+    font-size: 1.5em;
 }
 
-.follows-btn {
-    display: block;
+.followbtn-box {
+    padding: 10px 250px;
+    height: 60px;
+    height: 100px;
+    width: 500px;
+    margin-top: 25px;
+    margin-left: 400px;
+}
+
+
+.follow-btn {
     position: absolute;
-    margin-top: 40px;
-    margin-left: 60px;
-    left: 500px;
+    border-radius: 5px;
+    background-color: #51acff;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 120px;
+    height: 15px;
+    font-size: 15px;
+}
+
+.unfollow-btn {
+    position: absolute;
+    border-radius: 5px;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 120px;
+    height: 15px;
+    font-size: 15px;
+
 }
 
 /*↑search.blade↑*/
+
+
+/*↓userProfile.blade↓*/
+
+.user-icon {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.user-contents {
+    position: absolute;
+    top: 70px;
+    left: 250px;
+    font-size: 1.5rem;
+}
+
+.prf-name {
+    padding: 0px 0px 40px 0px;
+}
+
+.mgr-50 {
+    margin-right: 100px;
+    margin-bottom: 40px;
+}
+
+.mgr-60 {
+    margin-right: 126px;
+}
+
+.userfollowbtn-box {
+    position: absolute;
+    padding: 10px 250px;
+    top: 100px;
+    left: 600px;
+}
+
+.userfollow-btn {
+    position: absolute;
+    border-radius: 5px;
+    background-color: #51acff;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 120px;
+    height: 15px;
+    font-size: 15px;
+}
+
+.userunfollow-btn {
+    position: absolute;
+    border-radius: 5px;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 120px;
+    height: 15px;
+    font-size: 15px;
+}
+
+/*↑userProfile.blade↑*/
+
+
+/*↓Profile.blade↓*/
+
+.edit-container {
+    position: relative;
+    width: 1085px;
+    border-right: 1px solid #727272;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 45px;
+    left: 180px;
+}
+
+.edit-list {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 30px;
+    background-color: #f0e68c;
+}
+
+.ct-block {
+    padding: 10px 0px 10px 40px;
+}
+
+.input-name,
+.input-address,
+.input-pass1,
+.input-pass2,
+.input-bio,
+.input-image {
+    height: 50px;
+    width: 400px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.input-name {
+    margin-left: 90px;
+}
+
+.input-address {
+    margin-left: 69px;
+}
+
+.input-pass1 {
+    margin-left: 93px;
+}
+
+.input-pass2 {
+    margin-left: 26px;
+}
+
+.input-bio {
+    margin-left: 141px;
+}
+
+.input-image {
+    margin-left: 40px;
+}
+
+.update-button {
+    position: absolute;
+    margin-left: 240px;
+    border-radius: 5px;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 120px;
+    font-size: 15px;
+}
+
+/*↑Profile.blade↑*/

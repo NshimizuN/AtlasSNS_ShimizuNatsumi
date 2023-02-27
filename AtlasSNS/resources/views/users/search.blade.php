@@ -45,7 +45,6 @@
         @if(Auth::id() != $user->id)
         <ul class="follows-btn">
           <li>
-
             @if (auth()->user()->isFollowing($user->id))
             <p class="unfollow-btn"><a href="/search/{{$user->id}}/unfollow">フォロー解除</a>
               @else

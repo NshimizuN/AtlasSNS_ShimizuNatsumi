@@ -45,15 +45,17 @@ $(function () {
 
 //削除ボタン
 //マウスオーバー時の処理
-function mouseOn() {
-  var obj = document.getElementById("img1");
-  obj.src = "./images/trash.png";
-}
-
-//マウスアウト時の処理
-function mouseOff() {
-  var obj = document.getElementById("img1");
-  obj.src = "./images/trash-h.png";
-}
+//マウスを乗せたら発動
+$(function () {
+  //画像のsrc属性が別画像のパスに切り替わる
+  $('delete-img').hover(function () {
+    //画像のsrc属性が別画像のパスに切り替わる
+    $(this).attr('src', './images/trash-h.png');
+    //マウスを離したときの処理
+  }, function () {
+    //下の画像に戻す
+    $(this).attr('src', './images/trash.png');
+  });
+});
 
 //window.alert("aaa");

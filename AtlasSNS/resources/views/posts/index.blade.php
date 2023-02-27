@@ -46,9 +46,13 @@
       @if(Auth::user()->id == $post->user_id)
       <div class="btn-content">
         <!-- 投稿の編集ボタン -->
-        <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width="40" height="40"></a>
+        <div class="edit">
+          <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width="40" height="40"></a>
+        </div>
         <!-- 投稿の削除ボタン -->
-        <a class="btn-delete" onmouseover="mouseOn();" onmouseout="mouseOff();" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img id="img1" src="./images/trash-h.png" alt="削除" width="53" height="53"></a>
+        <div class="detete">
+          <a class="btn-delete" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="./images/trash.png" alt="削除" width="44" height="44"></a>
+        </div>
       </div>
       @endif
       <div class="post">{{$post->post}}</div>
