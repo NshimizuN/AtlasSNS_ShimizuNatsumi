@@ -37,17 +37,6 @@ class UsersController extends Controller
         return view('users.search', ['keyword' => $keyword, 'users' => $users]);  //検索ワード、ユーザーを表示させる（bladeへ渡す）
     }
 
-    //プロフィール バリデーションの内容
-    //protected function validator(array $data)
-    //{
-    //  return Validator::make($data, [
-    //     'username' => 'required|string|min:2|max:12',
-    //       'mail' => 'required|string|email:rfc,dns|min:5|max:40|unique:users',
-    //       'password' => 'required|string|min:8|max:20|confirmed|confirmed',
-    //         'bio' => 'string|max:150',
-    //        'images' => 'file|mines:jpg,png,bmp,gif,svg',
-    //    ]);
-    //}
 
     //プロフィール 編集機能
     public function store(Request $request)

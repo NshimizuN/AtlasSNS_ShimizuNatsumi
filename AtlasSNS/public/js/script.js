@@ -48,7 +48,7 @@ $(function () {
 //マウスを乗せたら発動
 $(function () {
   //画像のsrc属性が別画像のパスに切り替わる
-  $('delete-img').hover(function () {
+  $('.btn-delete').hover(function () {
     //画像のsrc属性が別画像のパスに切り替わる
     $(this).attr('src', './images/trash-h.png');
     //マウスを離したときの処理
