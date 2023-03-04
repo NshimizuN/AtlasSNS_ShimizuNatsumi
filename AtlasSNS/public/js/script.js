@@ -58,4 +58,25 @@ $(function () {
   });
 });
 
+//プロフィール画像の添付 ドラッグ＆ドロップ
+$(document).ready(function () {
+
+  $("#upload-area").on("dragenter", function (e) {
+    $("#upload-area").css("background", "#EEE");
+  });
+  $("#upload-area").on("dragleave", function (e) {
+    $("#upload-area").css("background", "#DDD");
+  });
+  $("#upload-area").on("drop", function (e) {
+    document.getElementById("upload-form-fileselect").files = e.originalEvent.dataTransfer.files;
+    $("#upload-area").css("background", "#FFF");
+  });
+  $(document).on("dragover", function (e) {
+    e.preventDefault();
+  });
+  $(document).on("drop", function (e) {
+    e.preventDefault();
+  });
+});
+
 //window.alert("aaa");

@@ -1,8 +1,8 @@
   @extends('layouts.login')
 
   <div class="followers-container">
-
     @section('content')
+
     {!! Form::open(['url' => '/user-profile']) !!}
 
     <!--ユーザープロフィール-->

@@ -717,8 +717,8 @@ button img {
 
 .input-name,
 .input-address,
-.input-pass1,
-.input-pass2,
+.input-password,
+.input-passwordcomfim,
 .input-bio,
 .input-image {
     height: 50px;
@@ -728,6 +728,8 @@ button img {
     margin-bottom: 20px;
 }
 
+
+
 .input-name {
     margin-left: 90px;
 }
@@ -736,11 +738,11 @@ button img {
     margin-left: 69px;
 }
 
-.input-pass1 {
+.input-password {
     margin-left: 93px;
 }
 
-.input-pass2 {
+.input-passwordcomfim {
     margin-left: 26px;
 }
 
