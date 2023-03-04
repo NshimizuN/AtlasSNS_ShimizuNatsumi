@@ -1,8 +1,7 @@
 @extends('layouts.login')
+@section('content')
 
 <div class="container">
-  @section('content')
-
   <!--投稿フォーム-->
   <div class="top-container">
     <div class="post-form">

@@ -715,12 +715,7 @@ button img {
     padding: 10px 0px 10px 40px;
 }
 
-.input-name,
-.input-address,
-.input-password,
-.input-passwordcomfim,
-.input-bio,
-.input-image {
+.input-form {
     height: 50px;
     width: 400px;
     font-size: 1.2rem;

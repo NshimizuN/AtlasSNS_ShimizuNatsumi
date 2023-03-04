@@ -25,32 +25,32 @@
 
         <div class="ct-block">
           <label class="contact-text" class="name">{{ Form::label('username') }}</label>
-          {{ Form::text('username',Auth::user()->username,['class' => 'input-name']) }}
+          {{ Form::text('username',Auth::user()->username,['class' => 'input-form']) }}
         </div>
 
         <div class="ct-block">
           <label class="contact-text" for="name">{{ Form::label('mail address') }}</label>
-          {{ Form::text('mail',Auth::user()->mail ,['class' => 'input-address']) }}
+          {{ Form::text('mail',Auth::user()->mail ,['class' => 'input-form']) }}
         </div>
 
         <div class="ct-block">
           <label class="contact-text" for="name"> {{ Form::label('password') }}</label>
-          {{ Form::text('password',null,['class' => 'input-pass1']) }}
+          {{ Form::password('password',['class' => 'input-form']) }}
         </div>
 
         <div class="ct-block">
           <label class="contact-text" for="name">{{ Form::label('password comfirm') }}</label>
-          {{ Form::password('password_confirmation',null,['class' => 'input-pass2']) }}
+          {{ Form::password('password_confirmation',['class' => 'input-form']) }}
         </div>
 
         <div class="ct-block">
           <label class="contact-text" for="name">{{ Form::label('bio') }}</label>
-          {{ Form::text('bio',Auth::user()->bio,['class' => 'input-bio']) }}
+          {{ Form::text('bio',Auth::user()->bio,['class' => 'input-form']) }}
         </div>
 
         <div class="ct-block">
           <label class="contact-text" for="images">{{ Form::label('icon image') }}</label>
-          {{ Form::file('imgpath',null,['class' => 'input-image']) }}
+          {{ Form::file('imgpath',['class' => 'input-form']) }}
           <div id="upload-area" style="cursor: pointer; text-align:center; padding: 10px; border-radius:4px; font-size:small; border:solid 1px #eee;" onclick="$('#upload-form-fileselect').click()">
             ファイルを選択<br />
           </div>
