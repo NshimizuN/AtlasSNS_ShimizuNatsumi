@@ -7,40 +7,58 @@ html {
     font-size: 16px;
 }
 
+/*ページの基本設定*/
 body {
-    /*ページの基本設定*/
-    position: relative;
+    color: #000000;
     font-size: 1rem;
-    /*文字サイズ規格*/
     font-family: "YuGothic",
-        /*全体の文字フォント*/
         Yu Gothic,
         sans-serif;
 }
 
-.container {
-    max-width: 1024px;
-    width: 90%;
-    border-right: 1px solid #727272;
+ul,
+li,
+ol {
+    list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+a:hover {
+    transition: 0.6s;
+}
+
+
+
+
+
+/*↓header↓*/
+header {}
+
+/*↑header↑*/
+
 /* ↓login.blade ヘッダー 上↓*/
-header {
-    background: #186AC9;
+
+.head-container {
+    max-width: 1024px;
     height: 100px;
-    width: 1440px;
+    width: 100%;
+    background: #186AC9;
     position: relative;
     flex-wrap: nowrap;
 }
 
-h1 {
+.logo {
     line-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     left: 20px;
-    top: 30px;
+    top: 10px;
 }
 
 /*右部 ユーザー名,アイコン、アコーディオンメニュー*/
@@ -54,7 +72,6 @@ h1 {
 /*ユーザー名*/
 .username {
     display: flex;
-    line-height: 100px;
     margin-right: 0;
     margin-left: 1100px;
     color: #fff;
@@ -62,15 +79,13 @@ h1 {
     font-size: 1.5rem;
 }
 
-/*トップページアイコン*/
-.icon {
-    display: flex;
-    margin-top: 15px;
-    margin-right: 0;
-    margin-left: auto;
-    width: 10%;
+/*ユーザー名 〜〜さん*/
+.accordion-title {
+    position: relative;
+    right: 100px;
+    color: #fff;
+    font-size: 1.5em;
 }
-
 
 /* headerのアコーディオンメニュー↓ */
 .accordion-container {
@@ -110,13 +125,6 @@ h1 {
     color: white;
 }
 
-/*ユーザー名 〜〜さん*/
-.accordion-title {
-    position: relative;
-    right: 100px;
-    color: #fff;
-    font-size: 1.5em;
-}
 
 /*三角*/
 .accordion-title:after {
@@ -164,10 +172,33 @@ h1 {
     margin-bottom: 30px;
 }
 
-
 /* headerのアコーディオンメニュー↑ */
 
-/*サイドバーのメニュー↓*/
+/*トップページアイコン*/
+.icon {
+    display: flex;
+    margin-top: 15px;
+    margin-right: 0;
+    margin-left: auto;
+    width: 10%;
+}
+
+/* ↑login.blade ヘッダー上 ↑*/
+
+
+/*↓login.bladeサイドバーのメニュー↓*/
+
+
+.side-container {
+    max-width: 1024px;
+    width: 20%;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+    display: flex;
+    background-color: pink;
+}
+
 .btn {
     display: block;
     left: 150px;
@@ -180,26 +211,11 @@ h1 {
     cursor: pointer;
 }
 
-.side-bar {
-    position: relative;
-    left: 1086px;
-    display: flex;
-    width: 353px;
-    height: 500px;
-    z-index: 2;
-    white-space: nowrap;
-    background-color: pink;
-}
-
 
 .user-name {
     display: flex;
     padding: 20px 0px 20px 20px;
     font-size: 15px;
-}
-
-.confirm {
-    position: absolute;
 }
 
 .follow-btn-box {}
@@ -341,6 +357,16 @@ h1 {
     top: 200px;
     left: 820px;
 }
+
+/*↓左側のcontainer↓*/
+.container {
+    max-width: 1024px;
+    width: 80%;
+    border-right: 1px solid #727272;
+}
+
+/*↑左側のcontainer↑*/
+
 
 /*↓フォローリストとか↓*/
 

@@ -22,13 +22,29 @@
 </head>
 
 <body>
+
     <header>
 
-        <h1 class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></h1>
+        <div class="head-container">
+            <p class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></p>
 
-        <div class="user">
-            <div class="username">{{Auth::user()->username}} さん
+            <div class="user">
+                <span class="username">{{Auth::user()->username}} さん</span>
+
+                <id="accordion" class="accordion-container">
+                    <!--$user->usernameで名前カラムを渡す-->
+                    <p class="accordion-title js-accordion-title">
+                    </p>
+                    <!--ハンバーガーメニュー-->
+                    <div class="accordion-content">
+                        <ul>
+                            <li class="accordion-list"><a href="/top">ホーム</a></li>
+                            <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
+                            <li class="accordion-list"><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </div>
             </div>
+
             <div class="icon">
                 @if(Auth::user()->images == "dawn.png")
                 <img src="/images/icon1.png" width="70" height="70">
@@ -36,39 +52,33 @@
                 <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
                 @endif
             </div>
-            </span>
 
-            <id="accordion" class="accordion-container">
-                <!--$user->usernameで名前カラムを渡す-->
-                <p class="accordion-title js-accordion-title">
-                </p>
-                <!--ハンバーガーメニュー-->
-                <div class="accordion-content">
-                    <ul>
-                        <li class="accordion-list"><a href="/top">ホーム</a></li>
-                        <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
-                        <li class="accordion-list"><a href="/logout">ログアウト</a></li>
-                    </ul>
-                </div>
-    </header>
-    @yield('content')
-    <div class="side-bar">
-        <div class="confirm">
-            <p class="user-name">{{Auth::user()->username}}さんの</p>
-            <div class="follow-btn-box">
-                <div class="side-follow-btn1">
-                    <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
-                </div>
-                <p class="followlist-btn1"><a href="/follow-list">フォローリスト</a></p>
 
-                <div class="side-follow-btn2">
-                    <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
+            </section>
+
+
+            @yield('content')
+
+
+            <div class="side-container">
+                <div class="confirm">
+                    <p class="user-name">{{Auth::user()->username}}さんの</p>
+                    <div class="follow-btn-box">
+                        <div class="side-follow-btn1">
+                            <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
+                        </div>
+                        <p class="followlist-btn1"><a href="/follow-list">フォローリスト</a></p>
+
+                        <div class="side-follow-btn2">
+                            <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
+                        </div>
+                        <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
+                    </div>
                 </div>
-                <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
+                <p class="search-btn"><a href="/search">ユーザー検索</a></p>
             </div>
-        </div>
-        <p class="search-btn"><a href="/search">ユーザー検索</a></p>
-    </div>
+    </header>
+
     <footer>
     </footer>
     <!--jQuery-->
