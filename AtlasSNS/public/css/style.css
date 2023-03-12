@@ -44,7 +44,6 @@ header {}
 
 .head-container {
     position: relative;
-    max-width: 1024px;
     height: 100px;
     background: #186AC9;
     position: relative;
@@ -132,8 +131,8 @@ header {}
 .accordion-title:after {
     content: "";
     position: relative;
-    right: -250px;
-    top: 5%;
+    left: -150px;
+    top: 10px;
     transition: all 0.2s ease-in-out;
     display: inline-block;
     width: 8px;
@@ -195,7 +194,6 @@ header {}
 #side-menu {}
 
 .side-container {
-    max-width: 1024px;
     width: 25%;
     margin-left: auto;
     margin-right: 0;
@@ -365,7 +363,6 @@ header {}
 
 /*↓左側のcontainer↓*/
 .container {
-    max-width: 1024px;
     width: 80%;
     border-right: 1px solid #727272;
 }
@@ -725,7 +722,7 @@ button img {
 
 .edit-container {
     position: relative;
-    width: 1085px;
+    width: 80%;
     border-right: 1px solid #727272;
 }
 
