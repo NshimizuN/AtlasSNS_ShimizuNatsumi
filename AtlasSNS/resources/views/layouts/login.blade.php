@@ -26,7 +26,7 @@
     <header>
         <section id="top-header">
             <div class="head-container">
-                <p class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></p>
+                <a href="/top"><img src="./images/atlas.png" class="logo" width="90" height="33"></a>
 
                 <div class="user">
                     <span class="username">{{Auth::user()->username}} さん</span>
@@ -45,15 +45,13 @@
                         </div>
                 </div>
 
-                <div class="icon">
-                    @if(Auth::user()->images == "dawn.png")
-                    <img src="/images/icon1.png" width="70" height="70">
-                    @else
-                    <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
-                    @endif
-                </div>
+                @if(Auth::user()->images == "dawn.png")
+                <img src="/images/icon1.png" class="icon" width="70" height="70">
+                @else
+                <img src=" {{ asset('storage/'.Auth::user()->images)}}" class="icon" width="70" height="70">
+                @endif
 
-
+            </div>
         </section>
 
 

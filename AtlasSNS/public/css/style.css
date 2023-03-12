@@ -43,6 +43,7 @@ header {}
 /* ↓login.blade ヘッダー 上↓*/
 
 .head-container {
+    position: relative;
     max-width: 1024px;
     height: 100px;
     background: #186AC9;
@@ -57,21 +58,22 @@ header {}
     align-items: center;
     position: absolute;
     left: 20px;
-    top: 10px;
+    top: 30px;
 }
 
 /*右部 ユーザー名,アイコン、アコーディオンメニュー*/
 .user {
-    position: relative;
+
     display: flex;
     flex-wrap: nowrap;
 }
 
 /*ユーザー名*/
 .username {
+    position: relative;
     display: flex;
-    margin-right: 0;
-    margin-left: 1100px;
+    left: 1100px;
+    top: 35px;
     color: #fff;
     font-weight: bold;
     font-size: 1.5rem;
@@ -100,7 +102,9 @@ header {}
 
 /*アコーディオンメニュー*/
 .accordion-container .accordion-title {
+    position: relative;
     display: flex;
+    left: 300px;
     position: relative;
     font-size: 1.5rem;
     font-weight: normal;
@@ -174,11 +178,13 @@ header {}
 
 /*トップページアイコン*/
 .icon {
+    position: absolute;
     display: flex;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-right: 0;
     margin-left: auto;
-    width: 10%;
+    bottom: 10px;
+    left: 1300px;
 }
 
 /* ↑login.blade ヘッダー上 ↑*/
