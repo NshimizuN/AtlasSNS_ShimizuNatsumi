@@ -24,42 +24,42 @@
 <body>
 
     <header>
+        <section id="top-header">
+            <div class="head-container">
+                <p class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></p>
 
-        <div class="head-container">
-            <p class="logo"><a href="/top"><img src="./images/atlas.png" width="90" height="33"></a></p>
+                <div class="user">
+                    <span class="username">{{Auth::user()->username}} さん</span>
 
-            <div class="user">
-                <span class="username">{{Auth::user()->username}} さん</span>
+                    <id="accordion" class="accordion-container">
+                        <!--$user->usernameで名前カラムを渡す-->
+                        <p class="accordion-title js-accordion-title">
+                        </p>
+                        <!--ハンバーガーメニュー-->
+                        <div class="accordion-content">
+                            <ul>
+                                <li class="accordion-list"><a href="/top">ホーム</a></li>
+                                <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
+                                <li class="accordion-list"><a href="/logout">ログアウト</a></li>
+                            </ul>
+                        </div>
+                </div>
 
-                <id="accordion" class="accordion-container">
-                    <!--$user->usernameで名前カラムを渡す-->
-                    <p class="accordion-title js-accordion-title">
-                    </p>
-                    <!--ハンバーガーメニュー-->
-                    <div class="accordion-content">
-                        <ul>
-                            <li class="accordion-list"><a href="/top">ホーム</a></li>
-                            <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
-                            <li class="accordion-list"><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </div>
-            </div>
-
-            <div class="icon">
-                @if(Auth::user()->images == "dawn.png")
-                <img src="/images/icon1.png" width="70" height="70">
-                @else
-                <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
-                @endif
-            </div>
-
-
-            </section>
+                <div class="icon">
+                    @if(Auth::user()->images == "dawn.png")
+                    <img src="/images/icon1.png" width="70" height="70">
+                    @else
+                    <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
+                    @endif
+                </div>
 
 
-            @yield('content')
+        </section>
 
 
+        @yield('content')
+
+        <section id="side-menu">
             <div class="side-container">
                 <div class="confirm">
                     <p class="user-name">{{Auth::user()->username}}さんの</p>
@@ -77,6 +77,8 @@
                 </div>
                 <p class="search-btn"><a href="/search">ユーザー検索</a></p>
             </div>
+        </section>
+
     </header>
 
     <footer>
