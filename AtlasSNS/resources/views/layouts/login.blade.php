@@ -25,59 +25,56 @@
 
     <header>
         <section id="top-header">
-            <div class="head-container">
-                <a href="/top"><img src="./images/atlas.png" class="logo" width="90" height="33"></a>
+            <a href="/top"><img src="./images/atlas.png" class="logo" width="90" height="33"></a>
 
-                <div class="user">
-                    <span class="username">{{Auth::user()->username}} さん</span>
+            <div class="user">
+                <span class="username">{{Auth::user()->username}} さん</span>
 
-                    <id="accordion" class="accordion-container">
-                        <!--$user->usernameで名前カラムを渡す-->
-                        <p class="accordion-title js-accordion-title">
-                        </p>
-                        <!--ハンバーガーメニュー-->
-                        <div class="accordion-content">
-                            <ul>
-                                <li class="accordion-list"><a href="/top">ホーム</a></li>
-                                <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
-                                <li class="accordion-list"><a href="/logout">ログアウト</a></li>
-                            </ul>
-                        </div>
-                </div>
-
-                @if(Auth::user()->images == "dawn.png")
-                <img src="/images/icon1.png" class="icon" width="70" height="70">
-                @else
-                <img src=" {{ asset('storage/'.Auth::user()->images)}}" class="icon" width="70" height="70">
-                @endif
-
-            </div>
-        </section>
-
-
-        @yield('content')
-
-        <section id="side-menu">
-            <div class="side-container">
-                <div class="confirm">
-                    <p class="user-name">{{Auth::user()->username}}さんの</p>
-                    <div class="follow-btn-box">
-                        <div class="side-follow-btn1">
-                            <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
-                        </div>
-                        <p class="followlist-btn1"><a href="/follow-list">フォローリスト</a></p>
-
-                        <div class="side-follow-btn2">
-                            <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
-                        </div>
-                        <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
+                <id="accordion" class="accordion-container">
+                    <!--$user->usernameで名前カラムを渡す-->
+                    <p class="accordion-title js-accordion-title">
+                    </p>
+                    <!--ハンバーガーメニュー-->
+                    <div class="accordion-content">
+                        <ul>
+                            <li class="accordion-list"><a href="/top">ホーム</a></li>
+                            <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
+                            <li class="accordion-list"><a href="/logout">ログアウト</a></li>
+                        </ul>
                     </div>
-                </div>
-                <p class="search-btn"><a href="/search">ユーザー検索</a></p>
             </div>
+
+            @if(Auth::user()->images == "dawn.png")
+            <img src="/images/icon1.png" class="icon" width="70" height="70">
+            @else
+            <img src=" {{ asset('storage/'.Auth::user()->images)}}" class="icon" width="70" height="70">
+            @endif
+
         </section>
 
     </header>
+    @yield('content')
+    <div class="main-container">
+        <section id="side-menu">
+            <div class="confirm">
+                <p class="user-name">{{Auth::user()->username}}さんの</p>
+                <div class="follow-btn-box">
+                    <div class="side-follow-btn1">
+                        <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
+                    </div>
+                    <p class="followlist-btn1"><a href="/follow-list">フォローリスト</a></p>
+
+                    <div class="side-follow-btn2">
+                        <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
+                    </div>
+                    <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
+                </div>
+            </div>
+            <p class="search-btn"><a href="/search">ユーザー検索</a></p>
+        </section>
+    </div>
+
+
 
     <footer>
     </footer>

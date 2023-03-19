@@ -42,7 +42,7 @@ header {}
 
 /* ↓login.blade ヘッダー 上↓*/
 
-.head-container {
+#top-header {
     position: relative;
     height: 100px;
     background: #186AC9;
@@ -188,13 +188,17 @@ header {}
 
 /* ↑login.blade ヘッダー上 ↑*/
 
+.main-container {
+    max-width: 1024px;
+    display: flex;
+}
+
+
 
 /*↓login.bladeサイドバーのメニュー↓*/
 
-#side-menu {}
-
-.side-container {
-    width: 25%;
+#side-menu {
+    width: 20%;
     margin-left: auto;
     margin-right: 0;
     position: relative;
@@ -362,7 +366,7 @@ header {}
 }
 
 /*↓左側のcontainer↓*/
-.container {
+#post {
     width: 80%;
     border-right: 1px solid #727272;
 }
