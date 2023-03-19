@@ -27,14 +27,12 @@ class PostsController extends Controller
         return view('posts.index', ['post' => $post]); // 現在認証しているユーザーを取得
     }
 
-    //dd($following_id);
-    // $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $following_id)->get(); //Postテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
 
     //投稿を登録する機能
     public function create(Request $request) //createメソット
     {
         $validator = Validator::make($request->all(), [
-            'post' => 'required|string|min:1|max:200',
+            'newPost' => 'required|string|min:1|max:200',
         ]); //バリデーション
         $post = $request->input('newPost'); //bladeから送られてきたidを受け取ってる
         \DB::table('posts')->insert([  //postsテーブルに指定
@@ -50,9 +48,8 @@ class PostsController extends Controller
     public function update(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'post' => 'required|string|min:1|max:200',
+            'upPost' => 'required|string|min:1|max:200',
         ]); //バリデーション
-        //dd("123");
         $id = $request->input('id'); //bladeから送られてきたidを受け取ってる
         $up_post = $request->input('upPost'); //bladeから送られてきたupPost(編集内容)を受け取ってる
         \DB::table('posts')
@@ -75,17 +72,6 @@ class PostsController extends Controller
         return redirect('top'); //トップページへリダイレクト（URL）
     }
 
-
-    //followListへフォローしてる人のつぶやきを表示
-    //public function followShow()
-    //{
-    //dd("123");
-    // Postモデル経由でpostsテーブルのレコードを取得
-    //   $following_id = Auth::user()->follows()->pluck('followed_id'); // フォローしているユーザーのidを取得
-    //dd($following_id);
-    // $posts = Post::orderBy('updated_at', 'desc')->with('user')->whereIn('user_id', $following_id)->get(); //Postテーブルuser_idとフォローしているユーザーidが一致している投稿を取得
-    //return view('follows.followList', compact('posts'));
-    //    }
 
     //followerListへフォローされてる人のつぶやきを表示
     public function followerShow()

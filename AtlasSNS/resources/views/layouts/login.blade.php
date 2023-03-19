@@ -9,6 +9,8 @@
     <title>AtlasSNS/改修課題</title>
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+    <!--フォントオーサム↓-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
@@ -53,27 +55,27 @@
         </section>
 
     </header>
-    @yield('content')
-    <div class="main-container">
-        <section id="side-menu">
-            <div class="confirm">
-                <p class="user-name">{{Auth::user()->username}}さんの</p>
-                <div class="follow-btn-box">
-                    <div class="side-follow-btn1">
-                        <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
-                    </div>
-                    <p class="followlist-btn1"><a href="/follow-list">フォローリスト</a></p>
 
-                    <div class="side-follow-btn2">
-                        <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
-                    </div>
-                    <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
+
+    <section id="side-menu">
+        <div class="confirm">
+            <p class="user-name">{{Auth::user()->username}}さんの</p>
+            <div class="follow-btn-box">
+                <div class="side-follow-btn1">
+                    <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>
                 </div>
-            </div>
-            <p class="search-btn"><a href="/search">ユーザー検索</a></p>
-        </section>
-    </div>
+                <p class="followlist-btn1"><a href="/follow-list">フォローリスト</a></p>
 
+                <div class="side-follow-btn2">
+                    <p><span class="mgr-40">フォロワー数</span>{{ Auth::user()->followers->count() }}名</p>
+                </div>
+                <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
+            </div>
+        </div>
+        <p class="search-btn"><a href="/search">ユーザー検索</a></p>
+    </section>
+
+    @yield('content')
 
 
     <footer>

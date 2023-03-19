@@ -12,7 +12,7 @@
         <form action="/search" method="GET">
           @csrf
           <input type="text" class="search-form" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
-          <button class="submit"><input type="submit" src="./image/" value="検索"></button>
+          <button type="submit" class="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
           <div class="search-word">
             @if(isset( $keyword ))
             <p class="word">検索ワード：{{$keyword}}</p>
