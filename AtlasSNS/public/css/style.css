@@ -36,13 +36,8 @@ a:hover {
 
 
 /*↓header↓*/
-header {}
 
-/*↑header↑*/
-
-/* ↓login.blade ヘッダー 上↓*/
-
-#top-header {
+header {
     position: relative;
     height: 100px;
     background: #186AC9;
@@ -62,7 +57,6 @@ header {}
 
 /*右部 ユーザー名,アイコン、アコーディオンメニュー*/
 .user {
-
     display: flex;
     flex-wrap: nowrap;
 }
@@ -175,7 +169,6 @@ header {}
 
 /* headerのアコーディオンメニュー↑ */
 
-/*トップページアイコン*/
 .icon {
     position: absolute;
     display: flex;
@@ -186,20 +179,36 @@ header {}
     left: 1300px;
 }
 
-/* ↑login.blade ヘッダー上 ↑*/
+/*↑header↑*/
 
-.main-container {}
+/* ↓コンテンツ 横並び指定↓ */
+
+.container {
+    display: flex;
+}
+
+/* ↑コンテンツ 横並び指定↑ */
 
 
 
-/*↓login.bladeサイドバーのメニュー↓*/
+/* ↓メインコンテンツ↓ */
 
-#side-menu {
-    width: 20%;
+.main-content {
+    flex-basis: 80%;
+    border-right: 1px solid #727272;
+}
+
+/* ↑メインコンテンツ↑ */
+
+
+
+/*↓side-menu↓*/
+
+.side-menu {
+    flex-basis: 20%;
     margin-left: auto;
     margin-right: 0;
     position: relative;
-    display: flex;
     background-color: pink;
 }
 
@@ -222,7 +231,6 @@ header {}
     font-size: 15px;
 }
 
-.follow-btn-box {}
 
 .mgr-30 {
     margin-right: 55px;
@@ -248,7 +256,7 @@ header {}
 
 .followlist-btn1 {
     position: absolute;
-    left: 180px;
+    left: 130px;
     top: 95px;
     border: 1px solid;
     border-radius: 5px;
@@ -265,7 +273,7 @@ header {}
 
 .followlist-btn2 {
     position: absolute;
-    left: 180px;
+    left: 130px;
     border: 1px solid;
     border-radius: 5px;
     background-color: #206ccc;
@@ -282,7 +290,7 @@ header {}
 .search-btn {
     position: absolute;
     top: 350px;
-    left: 90px;
+    left: 60px;
     border: 1px solid;
     border-radius: 5px;
     background-color: #206ccc;
@@ -296,12 +304,22 @@ header {}
     margin-left: auto;
 }
 
-/* ↑サイドバーのメニュー ↑*/
+.btn {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    width: 150px;
+    font-size: 15px;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* ↑side-menu↑*/
 
 
-/*↓login.blade 右のメインメニュー↓*/
-
-
+/* ↓index.blade↓ */
 
 
 /* 編集 モーダル */
@@ -362,61 +380,31 @@ header {}
     left: 820px;
 }
 
-/*↓左側のcontainer↓*/
-#post {
-    width: 80%;
-    border-right: 1px solid #727272;
-}
 
-/*↑左側のcontainer↑*/
+/*↓body共通部分↓*/
 
-
-/*↓フォローリストとか↓*/
-
-
-.btn {
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    color: white;
-    width: 150px;
-    font-size: 15px;
-    margin-right: 0;
-    margin-left: auto;
-}
-
-
-/*↑login.blade 右のメインメニュー↑*/
-
-/*body共通部分↓*/
-/*ベージ上部*/
+/*ページ上部*/
 .top-container {
     position: relative;
-    /* width: 1085px; */
-    height: 250px;
-    flex: 0 0 90%;
+    height: 200px;
     border-bottom: 5px solid #e0e0e0;
     background-color: #00aaa7;
-    border-right: 1px solid #727272;
 }
 
 
 /*ページ下部*/
 .bottom-container {
     position: relative;
-    /* width: 1085px; */
-    /* flex: 0 0 80%; */
     background-color: antiquewhite;
 }
 
-/*body共通部分↑*/
+/*↑body共通部分↑*/
 
 
-/*↓index.blade 全体↓*/
+/*↓index.blade↓*/
 
 button {
-    padding: 0;
+
     border: none;
     background: transparent;
 }
@@ -425,9 +413,6 @@ button img {
     display: block;
 }
 
-/*↑index.blade 全体↑*/
-
-/*↓index.blade 投稿フォーム↓*/
 .form-group {
     border-bottom: 5px solid #e0e0e0;
 }
@@ -435,7 +420,6 @@ button img {
 .post-form {
     position: absolute;
     background-color: #00aaa7;
-    width: 1085px;
 }
 
 .form-icon {
@@ -459,17 +443,9 @@ button img {
     left: 880px;
 }
 
-/*↑index.blade 投稿フォーム↑*/
-
-/*↓index.blade 投稿表示↓*/
-.view-container {
-    /* border-bottom: 1px solid black;*/
-}
-
 .post-container {
     position: absolute;
     background-color: antiquewhite;
-    /* width: 1085px; */
     border-right: 1px solid #727272;
 }
 
@@ -489,7 +465,6 @@ button img {
 .post {
     padding: 10px 250px;
     font-size: 95%;
-    height: 60px;
     height: 100px;
     width: 500px;
     border-bottom: 1px solid #000000;
@@ -536,7 +511,8 @@ button img {
     display: block;
 }
 
-/*↑index.blade 投稿表示↑*/
+/*↑index.blade↑*/
+
 
 /*↓follow,follower.blade↓*/
 
