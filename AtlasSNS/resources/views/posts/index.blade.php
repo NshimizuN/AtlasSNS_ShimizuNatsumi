@@ -1,4 +1,5 @@
 @extends('layouts.login')
+
 @section('content')
 
 <!--投稿フォーム-->

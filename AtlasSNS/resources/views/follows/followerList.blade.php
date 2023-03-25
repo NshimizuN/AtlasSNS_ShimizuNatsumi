@@ -1,34 +1,34 @@
 @extends('layouts.login')
 @section('content')
 
-<section id="follower-list">
 
-  <div class="container">
+<div class="followers-container">
 
-    {!! Form::open(['url' => '/follower-list']) !!}
+  {!! Form::open(['url' => '/follower-list']) !!}
 
-    <!--フォロワーアイコン-->
-    <div class="top-container">
-      <h2 class="followerlist">Follower list</h2>
-      <div class="follower-iconbox">
-        @foreach($followed_users as $followed_user)
-        <!--$userから$followed_userを抽出-->
-        @if($followed_user->images == "dawn.png")
-        <img src="/images/icon1.png">
-        @else
-        <img src=" {{ asset('storage/'.$followed_user->images)}}">
-        @endif
-        @endforeach
-      </div>
+  <!--フォロワーアイコン-->
+  <div class="top-container">
+    <h2 class="followerlist">Follower list</h2>
+    <div class="follower-iconbox">
+      @foreach($followed_users as $followed_user)
+      <!--$userから$followed_userを抽出-->
+      @if($followed_user->images == "dawn.png")
+      <img src="/images/icon1.png" width="70" height="70">
+      @else
+      <img src=" {{ asset('storage/'.$followed_user->images)}}" width="70" height="70">
+      @endif
+      @endforeach
     </div>
-
-    <!--フォロワーリスト-->
-    <div class="bottom-container">
-      <div class="post-container">
-        @foreach($posts as $post)
-        <!--$postsから$postを抽出-->
+  </div>
 
 
+  <!--フォロワーリスト-->
+  <div class="bottom-container">
+    <div class="post-container">
+      @foreach($posts as $post)
+      <!--$postsから$postを抽出-->
+
+      <div class="follower">
         <div class="post-icon">
           <a href="{{ route('user-profile', ['id' => $post->user->id]) }}">
             @if($post->user->images == "dawn.png")
@@ -41,10 +41,9 @@
         <div class="post-time">{{$post->updated_at}}</div>
         <div class="post-name">{{ $post->user->username }}</div>
         <div class="post">{{ $post->post }}</div>
-
-        @endforeach
       </div>
+      @endforeach
     </div>
-
-</section>
+  </div>
+</div>
 @endsection

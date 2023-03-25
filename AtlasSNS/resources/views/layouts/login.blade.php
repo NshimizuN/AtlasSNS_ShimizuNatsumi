@@ -74,6 +74,7 @@
                     <p class="followlist-btn2"><a href="/follower-list">フォロワーリスト</a></p>
                 </div>
             </div>
+            <hr color="#000000" size="1px">
             <p class="search-btn"><a href="/search">ユーザー検索</a></p>
         </div>
 

@@ -212,6 +212,10 @@ header {
     background-color: pink;
 }
 
+.confirm {
+    height: 250px;
+}
+
 .btn {
     display: block;
     left: 150px;
@@ -385,7 +389,7 @@ header {
 
 /*ページ上部*/
 .top-container {
-    position: relative;
+    /* position: relative; */
     height: 200px;
     border-bottom: 5px solid #e0e0e0;
     background-color: #00aaa7;
@@ -394,8 +398,9 @@ header {
 
 /*ページ下部*/
 .bottom-container {
-    position: relative;
+    /* position: relative; */
     background-color: antiquewhite;
+    /* border-bottom: 5px solid #e0e0e0; */
 }
 
 /*↑body共通部分↑*/
@@ -403,48 +408,36 @@ header {
 
 /*↓index.blade↓*/
 
-button {
-
-    border: none;
-    background: transparent;
-}
-
-button img {
-    display: block;
-}
-
-.form-group {
-    border-bottom: 5px solid #e0e0e0;
-}
-
 .post-form {
     position: absolute;
     background-color: #00aaa7;
 }
 
-.form-icon {
+.main-contentorm-icon {
     position: absolute;
-    top: 70px;
-    left: 110px;
+    left: 90px;
+    top: 40px;
 }
+
+
 
 .form-control {
     position: absolute;
     border: none;
     width: 700px;
     height: 100px;
-    top: 70px;
+    top: 50px;
     left: 190px;
 }
 
 .post-btn {
     position: absolute;
-    top: 110px;
-    left: 880px;
+    top: 90px;
+    left: 900px;
 }
 
 .post-container {
-    position: absolute;
+    /* position: absolute; */
     background-color: antiquewhite;
     border-right: 1px solid #727272;
 }
@@ -518,6 +511,8 @@ button img {
 
 .follows-container {}
 
+.followers-container {}
+
 /*↓フォローアイコンリスト↓*/
 .followlist,
 .followerlist {
@@ -547,12 +542,17 @@ button img {
 
 
 /*↓search.blade↓*/
+
+.search-container {
+    position: relative;
+}
+
 .search-form {
     position: absolute;
     height: 50px;
     width: 300px;
     left: 100px;
-    top: 100px;
+    top: 70px;
     border-radius: 5px;
     border-color: #727272;
 }
@@ -562,7 +562,7 @@ button img {
     height: 40px;
     width: 40px;
     left: 430px;
-    top: 110px;
+    top: 80px;
     font-size: 24px;
     color: #fff;
     background-color: #186AC9;
@@ -584,8 +584,7 @@ button img {
 .user-box {
     position: absolute;
     background-color: antiquewhite;
-    width: 1085px;
-    border-right: 1px solid #727272;
+    /* width: 80%; */
 }
 
 .search-icon {
@@ -643,6 +642,10 @@ button img {
 
 /*↓userProfile.blade↓*/
 
+.user-bio {
+    position: relative;
+}
+
 .user-icon {
     position: absolute;
     top: 50px;
@@ -651,7 +654,7 @@ button img {
 
 .user-contents {
     position: absolute;
-    top: 70px;
+    top: 50px;
     left: 250px;
     font-size: 1.5rem;
 }
@@ -707,21 +710,19 @@ button img {
 
 .edit-container {
     position: relative;
-    width: 80%;
-    border-right: 1px solid #727272;
+    background-color: #f0e68c;
 }
 
 .edit-icon {
-    position: absolute;
+    /* position: absolute; */
     top: 45px;
     left: 180px;
 }
 
 .edit-list {
-    position: absolute;
+    /* position: absolute; */
     margin-left: 250px;
     margin-top: 30px;
-    background-color: #f0e68c;
 }
 
 .ct-block {

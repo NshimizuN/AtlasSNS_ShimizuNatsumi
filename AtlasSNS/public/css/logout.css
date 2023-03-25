@@ -69,9 +69,8 @@ img {
 /*フォーム背景*/
 
 #login-content {
-    background-color: black;
-    height: 100px;
-    width: 100px;
+    background-color: #ccd8ff;
+    padding: 50px 0;
 }
 
 /*AtlasSNSへようこそ*/
