@@ -20,8 +20,6 @@ body {
     font-family: "YuGothic",
         Yu Gothic,
         sans-serif;
-    max-width: 1100px;
-    width: 100%;
     margin: 0 auto;
     /*height: 100%;*/
     /*background: #186AC9;*/
@@ -71,6 +69,13 @@ img {
 #login-content {
     background-color: #ccd8ff;
     padding: 50px 0;
+}
+
+.login-form {
+    width: 300px;
+    height: 350px;
+    background-color: #4773ff;
+    margin: 0 auto;
 }
 
 /*AtlasSNSへようこそ*/

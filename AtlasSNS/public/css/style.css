@@ -459,7 +459,6 @@ header {
     padding: 10px 250px;
     font-size: 95%;
     height: 100px;
-    width: 500px;
     border-bottom: 1px solid #000000;
 }
 
@@ -709,24 +708,33 @@ button img {
 /*↓Profile.blade↓*/
 
 .edit-container {
-    position: relative;
+    /* position: relative; */
     background-color: #f0e68c;
+    /* dispay: flex; */
 }
 
-.edit-icon {
-    /* position: absolute; */
-    top: 45px;
-    left: 180px;
+.edit-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
 }
 
 .edit-list {
     /* position: absolute; */
-    margin-left: 250px;
-    margin-top: 30px;
+
 }
 
 .ct-block {
+    display: flex;
+    align-items: center;
     padding: 10px 0px 10px 40px;
+}
+
+.contact-text {
+    display: inline-block;
+    text-align: left;
+    width: 150px;
 }
 
 .input-form {
@@ -735,36 +743,17 @@ button img {
     font-size: 1.2rem;
     margin-top: 10px;
     margin-bottom: 20px;
+    margin-left: 30px;
+    justify-content: flex-start;
 }
 
-
-
-.input-name {
-    margin-left: 120px;
-}
-
-.input-address {
-    margin-left: 100px;
-}
-
-.input-password {
-    margin-left: 93px;
-}
-
-.input-passwordcomfim {
-    margin-left: 26px;
-}
-
-.input-bio {
-    margin-left: 141px;
-}
-
-.input-image {
-    margin-left: 40px;
-}
-
-.update-box {
-    padding-bottom: 100px;
+.image-form {
+    width: 350px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    justify-content: flex-start;
 }
 
 .update-btn {
