@@ -26,23 +26,29 @@
 <body>
 
     <header>
-        <a href="/top"><img src="./images/atlas.png" class="logo" width="90" height="33"></a>
+        <div class="logo-box">
+            <a href="/top"><img src="./images/atlas.png" class="logo" width="90" height="33"></a>
+        </div>
 
         <div class="user">
-            <span class="username">{{Auth::user()->username}} さん</span>
-
-            <id="accordion" class="accordion-container">
-                <!--$user->usernameで名前カラムを渡す-->
-                <p class="accordion-title js-accordion-title">
-                </p>
-                <!--ハンバーガーメニュー-->
-                <div class="accordion-content">
-                    <ul>
-                        <li class="accordion-list"><a href="/top">ホーム</a></li>
-                        <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
-                        <li class="accordion-list"><a href="/logout">ログアウト</a></li>
-                    </ul>
+            <div class="username-box">
+                <span class="username">{{Auth::user()->username}} さん</span>
+            </div>
+            <div class="accordion-menu">
+                <div class="accordion-title js-accordion-title">
                 </div>
+                <div class="accordion-container">
+                    <!--$user->usernameで名前カラムを渡す-->
+                    <!--ハンバーガーメニュー-->
+                    <div class="accordion-content">
+                        <ul>
+                            <li class="accordion-list"><a href="/top">ホーム</a></li>
+                            <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
+                            <li class="accordion-list"><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         @if(Auth::user()->images == "dawn.png")
@@ -61,7 +67,7 @@
 
         <div class="side-menu">
             <div class="confirm">
-                <p class="user-name">{{Auth::user()->username}}さんの</p>
+                <div class="user-name">{{Auth::user()->username}}さんの</div>
                 <div class="follow-btn-box">
                     <div class="side-follow-btn1">
                         <p><span class="mgr-30">フォロー数</span>{{ Auth::user()->follows->count() }}名</p>

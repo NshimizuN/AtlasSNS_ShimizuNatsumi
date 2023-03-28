@@ -48,7 +48,7 @@
 
         <div class="ct-block">
           <label class="contact-text" for="images">{{ Form::label('icon image') }}</label>
-          {{ Form::file('imgpath',['class' => 'input-form']) }}
+          {{ Form::file('imgpath',['class' => 'image-form']) }}
         </div>
 
         <div class="update-box">

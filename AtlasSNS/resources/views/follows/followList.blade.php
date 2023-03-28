@@ -8,16 +8,20 @@
 
     <!--フォローアイコン-->
     <div class="top-container">
-      <h2 class="followlist">Follow list</h2>
-      <div class="follow-iconbox">
-        @foreach($following_users as $following_user)
-        <!--$userから$follow_userを抽出-->
-        @if($following_user->images == "dawn.png")
-        <img src="/images/icon1.png" width="70" height="70">
-        @else
-        <img src=" {{ asset('storage/'.$following_user->images)}}" width="70" height="70">
-        @endif
-        @endforeach
+      <div class="follow-list">
+        <h2>Follow list</h2>
+        <div class="follow-box">
+          <div class="follow-iconbox">
+            @foreach($following_users as $following_user)
+            <!--$userから$follow_userを抽出-->
+            @if($following_user->images == "dawn.png")
+            <img src="/images/icon1.png" width="70" height="70">
+            @else
+            <img src=" {{ asset('storage/'.$following_user->images)}}" width="70" height="70">
+            @endif
+            @endforeach
+          </div>
+        </div>
       </div>
     </div>
 
