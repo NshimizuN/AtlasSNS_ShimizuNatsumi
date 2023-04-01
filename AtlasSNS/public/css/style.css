@@ -42,6 +42,7 @@ header {
     background: #186AC9;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -91,7 +92,7 @@ header {
     display: block;
     margin-top: 15px;
     text-align: center;
-    right: 30px;
+    /* right: 30px; */
     border-top: none;
     outline: 0;
     cursor: pointer;
@@ -100,8 +101,8 @@ header {
 
 /*アコーディオンメニュー*/
 .accordion-container .accordion-title {
-    display: flex;
-    left: 200px;
+    /* display: flex; */
+    /* left: 200px; */
     font-size: 1.5rem;
     font-weight: normal;
     color: #fff
@@ -140,31 +141,36 @@ header {
 .accordion-title.open:after {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
 }
 
 /* CSS for CodePen */
 .accordion-container {
     width: 300px;
     margin: 1.875em auto;
-    z-index: 1;
+    /* z-index: 10; */
 }
 
 .accordion-content {
-    display: block;
+    position: absolute;
     padding: 20px 20px 20px 20px;
     width: 250px;
-    margin: 2.4em 0;
+    /* margin: 2.4em 0; */
     font-weight: normal;
     border: solid 1px #000000;
     background: #fff;
     font-size: 1.8rem;
-    z-index: 3;
+    z-index: 10;
 }
 
 .accordion-list {
+    position: relative;
     display: block;
     margin-top: 30px;
     margin-bottom: 30px;
+    /* z-index: 10; */
 }
 
 /* headerのアコーディオンメニュー↑ */
@@ -173,6 +179,7 @@ header {
     display: flex;
     justify-content: flex-end;
     bottom: 10px;
+    margin-right: 30px;
 }
 
 /*↑header↑*/
