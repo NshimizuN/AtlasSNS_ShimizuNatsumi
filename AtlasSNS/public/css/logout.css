@@ -76,6 +76,8 @@ img {
     height: 350px;
     background-color: #4773ff;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 /*AtlasSNSへようこそ*/
@@ -98,11 +100,11 @@ img {
     border: 0.5px solid #000;
     font-weight: bold;
     border-radius: 5px;
-    width: 15%;
+    width: 200px;
     height: 30px;
     padding: 0 10px;
     margin-bottom: 10px;
-    color: #fff;
+    color: #000;
 }
 
 /*ログインボタン*/

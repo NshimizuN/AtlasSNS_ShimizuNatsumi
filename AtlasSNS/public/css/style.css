@@ -42,6 +42,7 @@ header {
     background: #186AC9;
     display: flex;
     align-items: center;
+
 }
 
 .logo-box {
@@ -53,12 +54,13 @@ header {
 .user {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .username-box {
     display: flex;
     width: 200px;
-    justify-content: right;
+    justify-items: right;
     margin-left: 500px;
 }
 
@@ -169,7 +171,7 @@ header {
 
 .icon {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     bottom: 10px;
 }
 
@@ -371,6 +373,7 @@ header {
 /*ページ上部*/
 .top-container {
     /* position: relative; */
+    display: flex;
     height: 200px;
     border-bottom: 5px solid #e0e0e0;
     background-color: #00aaa7;
@@ -513,6 +516,7 @@ h2 {
 
 .search-form {
     /* position: absolute; */
+    align-items: center;
     height: 50px;
     width: 300px;
     left: 100px;

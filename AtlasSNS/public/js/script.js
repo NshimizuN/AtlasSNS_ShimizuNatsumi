@@ -6,7 +6,7 @@
 //アコーディオンメニュー
 jQuery(function ($) {
   /*コンテンツを非表示↓*/
-  $('.accordion-content').hide();
+  $('.accordion-container').hide();
   /*コンテンツのタイトルをクリック↓*/
   $('.js-accordion-title').on('click', function () {
     /*クリックでコンテンツを開閉*/
