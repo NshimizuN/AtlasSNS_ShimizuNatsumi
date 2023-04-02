@@ -43,7 +43,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .logo-box {
@@ -69,6 +68,8 @@ header {
 /*ユーザー名*/
 .username {
     display: flex;
+    position: relative;
+    left: 270px;
     color: #fff;
     font-weight: bold;
     font-size: 1.5rem;
@@ -85,12 +86,15 @@ header {
 /* headerのアコーディオンメニュー↓ */
 .accordion-menu {
     display: block;
-    margin-top: 40px;
+    /* margin-top: 50px; */
 }
 
 .accordion-container {
+    position: relative;
+    left: 75px;
     display: block;
-    margin-top: 15px;
+    margin-top: 70px;
+    /* margin-left: 70px; */
     text-align: center;
     /* right: 30px; */
     border-top: none;
@@ -127,6 +131,8 @@ header {
 
 /*三角*/
 .accordion-title:after {
+    position: relative;
+    left: 230px;
     content: "";
     transition: all 0.2s ease-in-out;
     display: inline-block;
@@ -148,29 +154,33 @@ header {
 
 /* CSS for CodePen */
 .accordion-container {
-    width: 300px;
-    margin: 1.875em auto;
+    /* width: 300px; */
+    /* margin: 1.875em auto; */
     /* z-index: 10; */
+    /* position: relative; */
 }
 
 .accordion-content {
     position: absolute;
     padding: 20px 20px 20px 20px;
+    height: 230px;
     width: 250px;
     /* margin: 2.4em 0; */
     font-weight: normal;
     border: solid 1px #000000;
     background: #fff;
     font-size: 1.8rem;
-    z-index: 10;
+    /* z-index: 10; */
+
 }
+
 
 .accordion-list {
     position: relative;
     display: block;
     margin-top: 30px;
-    margin-bottom: 30px;
-    /* z-index: 10; */
+    margin-bottom: 40px;
+    z-index: 10;
 }
 
 /* headerのアコーディオンメニュー↑ */
@@ -389,6 +399,8 @@ header {
 
 /*ページ下部*/
 .bottom-container {
+    display: flex;
+    flex-flow: column;
     /* position: relative; */
     background-color: antiquewhite;
     /* border-bottom: 5px solid #e0e0e0; */
@@ -402,10 +414,15 @@ header {
 .post-form {
     background-color: #00aaa7;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: space-between;
 }
 
-.main-contentorm-icon {}
+.main-contentorm-icon {
+    margin-left: 50px;
+    margin-top: 30px;
+    /* margin-bottom: 50px; */
+}
 
 
 
@@ -416,46 +433,56 @@ header {
     height: 100px;
 }
 
-.post-btn {}
+.post-btn {
+    margin-left: 800px;
+}
 
 .post-container {
     /* position: absolute; */
     background-color: antiquewhite;
-    border-right: 1px solid #727272;
+    border-bottom: 1px solid #000000;
 }
 
-.post-icon {}
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+}
+
+.post-icon {
+    margin-left: 150px;
+}
 
 .post-name {
     font-size: 1.0rem;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 .post {
-    font-size: 95%;
-    border-bottom: 1px solid #000000;
+    margin: 20px 0px 40px 205px;
 }
 
 .post-time {
     display: flex;
-    /* position: absolute; */
-    right: 100px;
     font-size: 80%;
-    margin-top: 25px;
+    margin-right: 80px;
 }
 
 /*編集、削除*/
 .btn-content {
     display: flex;
-    /* position: absolute; */
-    right: 95px;
-    margin-top: 50px;
+    margin: 0px 0px 15px 990px;
 }
 
 .btn-delete {
     display: flex;
-    /* position: absolute; */
-    right: 0px;
 }
 
 .js-modal-open {
@@ -516,7 +543,7 @@ h2 {
 /*↓search.blade↓*/
 
 .search-box {
-    /* position: relative; */
+    display: flex;
     align-items: center;
     margin-left: 100px;
 }
@@ -620,24 +647,22 @@ h2 {
 /*↓userProfile.blade↓*/
 
 .user-bio {
-    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
 }
 
 .user-icon {
-    position: absolute;
-    top: 50px;
-    left: 100px;
+    margin-bottom: 30px;
 }
 
 .user-contents {
-    position: absolute;
-    top: 50px;
-    left: 250px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    margin-left: 30px;
 }
 
 .prf-name {
-    padding: 0px 0px 40px 0px;
+    padding: 0px 0px 25px 0px;
 }
 
 .mgr-50 {
@@ -650,14 +675,12 @@ h2 {
 }
 
 .userfollowbtn-box {
-    position: absolute;
-    padding: 10px 250px;
-    top: 100px;
-    left: 600px;
+    margin-left: 400px;
+    margin-top: 40px;
 }
 
 .userfollow-btn {
-    position: absolute;
+    /* position: absolute; */
     border-radius: 5px;
     background-color: #51acff;
     padding: 10px;
@@ -669,7 +692,7 @@ h2 {
 }
 
 .userunfollow-btn {
-    position: absolute;
+    /* position: absolute; */
     border-radius: 5px;
     background-color: red;
     padding: 10px;

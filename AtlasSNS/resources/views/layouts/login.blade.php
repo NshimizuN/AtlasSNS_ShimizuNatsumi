@@ -41,7 +41,7 @@
                     <!--$user->usernameで名前カラムを渡す-->
                     <!--ハンバーガーメニュー-->
                     <div class="accordion-content">
-                        <ul>
+                        <ul class="menu-list">
                             <li class="accordion-list"><a href="/top">ホーム</a></li>
                             <li class="accordion-list"><a href="/profile">プロフィール編集</a></li>
                             <li class="accordion-list"><a href="/logout">ログアウト</a></li>

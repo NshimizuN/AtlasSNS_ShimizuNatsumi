@@ -26,20 +26,24 @@
 
 <!--投稿リスト-->
 <div class="bottom-container">
+
+  <!--コントローラーから渡された複数のデータを表示する-->
+  @foreach ($post as $post)
   <div class="post-container">
-    <!--コントローラーから渡された複数のデータを表示する-->
-    @foreach ($post as $post)
-
-    <div class="post-icon">
-      @if($post->user->images == "dawn.png")
-      <img src="/images/icon1.png" width="50" height="50">
-      @else
-      <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
-      @endif
+    <div class="post-info">
+      <div class="post-user">
+        <div class="post-icon">
+          @if($post->user->images == "dawn.png")
+          <img src="/images/icon1.png" width="50" height="50">
+          @else
+          <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
+          @endif
+        </div>
+        <div class="post-name">{{$post->user->username}}</div>
+      </div>
+      <div class="post-time">{{$post->updated_at}}</div>
     </div>
-    <div class="post-time">{{$post->updated_at}}</div>
-    <div class="post-name">{{$post->user->username}}</div>
-
+    <div class="post">{{$post->post}}</div>
     <!--コントローラーから渡された複数のデータを表示する-->
     <!-- <td><a class="btn btn-primary" href="/post/{{$post->id}}/update-form">更新</a></td>-->
     @if(Auth::user()->id == $post->user_id)
@@ -50,8 +54,9 @@
       <a href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img class="btn-delete" src="./images/trash.png" alt="削除" width="44" height="44"></a>
     </div>
     @endif
-    <div class="post">{{$post->post}}</div>
-    @endforeach
+
+
+
 
     <!-- モーダルの中身 -->
     <div class=" modal js-modal">
@@ -68,6 +73,8 @@
       </div>
     </div>
   </div>
+  @endforeach
+
 </div>
 
 
