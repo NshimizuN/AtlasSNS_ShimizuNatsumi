@@ -16,21 +16,7 @@ jQuery(function ($) {
   });
 });
 
-//アコーディオンメニュー マウスオンで色が変わる
-$(function () {
-  $('.accordion-list').hover(
-    function () {
-      $('.accordion-list').css('background', '#00c9e8');
-      $('.accordion-list').css('transition', '0.5s');
-      $('.accordion-list').css('color', '#00c9e8');
-      $('.accordion-list').css('transition', '0.5s');
-    },
-    function () {
-      $('.accordion-list').css('background', '#FFFF');
-      $('.accordion-list').css('color', '#FFFF');
-    }
-  );
-});
+
 
 //モーダル機能
 $(function () {

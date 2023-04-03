@@ -13,9 +13,9 @@
 
       <!--アイコン-->
       @if(Auth::user()->images == "dawn.png")
-      <img src="/images/icon1.png" width="70" height="70">
+      <img src="/images/icon1.png" alt="初期アイコン" width="70" height="70">
       @else
-      <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
+      <img src=" {{ asset('storage/'.Auth::user()->images)}}" alt="アイコン" width="70" height="70">
       @endif
 
       <div class="edit-list">

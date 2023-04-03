@@ -10,9 +10,9 @@
         @foreach($users as $user)
         <div class="user-icon">
           @if($user->images == "dawn.png")
-          <img src="/images/icon1.png" width="70" height="70">
+          <img src="/images/icon1.png" alt="初期アイコン" width="70" height="70">
           @else
-          <img src=" {{ asset('storage/'.$user->images)}}" width="70" height="70">
+          <img src=" {{ asset('storage/'.$user->images)}}" alt="アイコン" width="70" height="70">
           @endif
         </div>
 
@@ -52,9 +52,9 @@
           <div class="post-user">
             <div class="post-icon">
               @if($post->user->images == "dawn.png")
-              <img src="/images/icon1.png" width="50" height="50">
+              <img src="/images/icon1.png" alt="初期アイコン" width="50" height="50">
               @else
-              <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
+              <img src=" {{ asset('storage/'.$post->user->images)}}" alt="アイコン" width="50" height="50">
               @endif
             </div>
             <div class="post-name">{{ $post->user->username }}</div>

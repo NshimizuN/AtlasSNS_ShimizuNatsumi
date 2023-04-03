@@ -79,9 +79,7 @@ class RegisterController extends Controller
         return '/index';
     }
 
-    // public function registerForm(){
-    //     return view("auth.register");
-    // }
+
 
     //バリデーションの判断 新規登録
     public function register(Request $request)

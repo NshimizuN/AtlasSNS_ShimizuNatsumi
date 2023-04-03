@@ -65,7 +65,6 @@ header {
 }
 
 
-/*ユーザー名*/
 .username {
     display: flex;
     position: relative;
@@ -76,7 +75,6 @@ header {
     width: 150px;
 }
 
-/*ユーザー名 〜〜さん*/
 .accordion-title {
     right: 100px;
     color: #fff;
@@ -86,7 +84,6 @@ header {
 /* headerのアコーディオンメニュー↓ */
 .accordion-menu {
     display: block;
-    /* margin-top: 50px; */
 }
 
 .accordion-container {
@@ -94,9 +91,7 @@ header {
     left: 75px;
     display: block;
     margin-top: 70px;
-    /* margin-left: 70px; */
     text-align: center;
-    /* right: 30px; */
     border-top: none;
     outline: 0;
     cursor: pointer;
@@ -105,13 +100,9 @@ header {
 
 /*アコーディオンメニュー*/
 .accordion-container .accordion-title {
-    /* display: flex; */
-    /* left: 200px; */
     font-size: 1.5rem;
     font-weight: normal;
-    color: #fff
-        /*background: #000;*/
-        cursor: pointer;
+    color: #fff cursor: pointer;
 
 }
 
@@ -152,26 +143,17 @@ header {
     height: 8px;
 }
 
-/* CSS for CodePen */
-.accordion-container {
-    /* width: 300px; */
-    /* margin: 1.875em auto; */
-    /* z-index: 10; */
-    /* position: relative; */
-}
+
 
 .accordion-content {
     position: absolute;
     padding: 20px 20px 20px 20px;
     height: 230px;
     width: 250px;
-    /* margin: 2.4em 0; */
     font-weight: normal;
     border: solid 1px #000000;
     background: #fff;
     font-size: 1.8rem;
-    /* z-index: 10; */
-
 }
 
 
@@ -198,6 +180,7 @@ header {
 
 .container {
     display: flex;
+    border-right: 1px #000000;
 }
 
 /* ↑コンテンツ 横並び指定↑ */
@@ -222,8 +205,6 @@ header {
     flex-basis: 20%;
     margin-left: auto;
     margin-right: 0;
-    /* position: relative; */
-    background-color: pink;
 }
 
 .confirm {
@@ -389,11 +370,9 @@ header {
 
 /*ページ上部*/
 .top-container {
-    /* position: relative; */
     display: flex;
     height: 200px;
     border-bottom: 5px solid #e0e0e0;
-    background-color: #00aaa7;
 }
 
 
@@ -401,9 +380,6 @@ header {
 .bottom-container {
     display: flex;
     flex-flow: column;
-    /* position: relative; */
-    background-color: antiquewhite;
-    /* border-bottom: 5px solid #e0e0e0; */
 }
 
 /*↑body共通部分↑*/
@@ -412,23 +388,20 @@ header {
 /*↓index.blade↓*/
 
 .post-form {
-    background-color: #00aaa7;
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
 }
 
 .main-contentorm-icon {
     margin-left: 50px;
     margin-top: 30px;
-    /* margin-bottom: 50px; */
 }
 
 
 
 .form-control {
-    /* position: absolute; */
     border: none;
+    margin-left: 30px;
     width: 700px;
     height: 100px;
 }
@@ -438,8 +411,6 @@ header {
 }
 
 .post-container {
-    /* position: absolute; */
-    background-color: antiquewhite;
     border-bottom: 1px solid #000000;
 }
 
@@ -487,7 +458,6 @@ header {
 
 .js-modal-open {
     display: flex;
-    /* position: absolute; */
     right: 55px;
     top: 5px;
 }
@@ -549,7 +519,6 @@ h2 {
 }
 
 .search-form {
-    /* position: absolute; */
     align-items: center;
     height: 50px;
     width: 300px;
@@ -587,7 +556,6 @@ h2 {
 
 .user-box {
     display: block;
-    background-color: antiquewhite;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -680,7 +648,6 @@ h2 {
 }
 
 .userfollow-btn {
-    /* position: absolute; */
     border-radius: 5px;
     background-color: #51acff;
     padding: 10px;
@@ -692,7 +659,6 @@ h2 {
 }
 
 .userunfollow-btn {
-    /* position: absolute; */
     border-radius: 5px;
     background-color: red;
     padding: 10px;
@@ -709,9 +675,7 @@ h2 {
 /*↓Profile.blade↓*/
 
 .edit-container {
-    /* position: relative; */
     background-color: #f0e68c;
-    /* dispay: flex; */
 }
 
 .edit-box {
@@ -721,10 +685,6 @@ h2 {
 
 }
 
-.edit-list {
-    /* position: absolute; */
-
-}
 
 .ct-block {
     display: flex;

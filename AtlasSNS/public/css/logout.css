@@ -54,11 +54,11 @@ img {
 
 /*↓login.blade↓*/
 
-.login-form {
+.login-content {
     display: flex;
     justify-content: space-between;
     width: 300px;
-    height: 400px;
+    height: 330px;
     background-color: rgb(0, 0, 0, 0.2);
     border-radius: 10px;
     margin: 0 auto;
@@ -68,13 +68,13 @@ img {
 
 .ja-title {
     font-size: 1.3rem;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
 .login-block {
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .contact-text {
@@ -138,7 +138,7 @@ img {
 /*↓register.blade↓*/
 
 
-.register-form {
+.register-content {
     display: flex;
     justify-content: space-between;
     width: 300px;
@@ -170,7 +170,7 @@ img {
 
 
 /*↓added.blade↓*/
-.login-form {
+.added-content {
     display: flex;
     justify-content: center;
     width: 300px;
@@ -182,15 +182,17 @@ img {
     align-items: center;
 }
 
-.wellcom {
-    font-size: 1.5rem;
+.text-1 {
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 40px;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
-.completion {
-    font-size: 1.1rem;
-    margin-top: 20px;
+.text-2 {
+    font-size: 1.2rem;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
@@ -203,7 +205,8 @@ img {
     color: #ffffff;
     border: 2px solid #EE3950;
     border-radius: 5px;
-    margin-left: 50px;
+    margin-left: 60px;
+    margin-bottom: 25px;
 }
 
 /*↑added.blade↑*/

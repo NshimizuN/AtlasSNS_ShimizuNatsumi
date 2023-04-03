@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <!--IEブラウザ対策-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="ページの内容を表す文章" />
@@ -27,7 +27,7 @@
 
     <header>
         <div class="logo-box">
-            <a href="/top"><img src="./images/atlas.png" class="logo" width="90" height="33"></a>
+            <a href="/top"><img src="{{asset('./images/atlas.png')}}" alt="ロゴ" class="logo" width="90" height="33"></a>
         </div>
 
         <div class="user">
@@ -52,9 +52,9 @@
         </div>
 
         @if(Auth::user()->images == "dawn.png")
-        <img src="/images/icon1.png" class="icon" width="70" height="70">
+        <img src="/images/icon1.png" alt="初期アイコン" class="アイコン" width="70" height="70">
         @else
-        <img src=" {{ asset('storage/'.Auth::user()->images)}}" class="icon" width="70" height="70">
+        <img src=" {{ asset('storage/'.Auth::user()->images)}}" alt="icon" class="icon" width="70" height="70">
         @endif
     </header>
 

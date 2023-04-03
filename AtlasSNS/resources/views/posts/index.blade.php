@@ -7,9 +7,9 @@
   <div class="post-form">
     <div class="main-contentorm-icon">
       @if(Auth::user()->images == "dawn.png")
-      <img src="/images/icon1.png" width="70" height="70">
+      <img src="/images/icon1.png" alt="初期アイコン" width="70" height="70">
       @else
-      <img src=" {{ asset('storage/'.Auth::user()->images)}}" width="70" height="70">
+      <img src=" {{ asset('storage/'.Auth::user()->images)}}" alt="アイコン" width="70" height="70">
       @endif
     </div>
 
@@ -17,7 +17,7 @@
     {{Form::token()}}
 
     {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
-    <button><input type="image" src="./images/post.png" alt="投稿" class="post-btn" width="80" height="80"></button>
+    <button><input type="image" src="./images/post.png" alt="投稿" alt="投稿" class="post-btn" width="80" height="80"></button>
     {!! Form::close() !!}
   </div>
 </div>
@@ -34,9 +34,9 @@
       <div class="post-user">
         <div class="post-icon">
           @if($post->user->images == "dawn.png")
-          <img src="/images/icon1.png" width="50" height="50">
+          <img src="/images/icon1.png" alt="初期アイコン" width="50" height="50">
           @else
-          <img src=" {{ asset('storage/'.$post->user->images)}}" width="50" height="50">
+          <img src=" {{ asset('storage/'.$post->user->images)}}" alt="アイコン" width="50" height="50">
           @endif
         </div>
         <div class="post-name">{{$post->user->username}}</div>
@@ -67,7 +67,7 @@
           <textarea name="upPost" class="modal_post"></textarea>
           <!--コントローラーへのリンク-->
           <input type="hidden" name="id" class="modal_id" value="">
-          <input type="image" class="modai__btn" src="./images/edit.png" width="50" height="50">
+          <input type="image" class="modai__btn" src="./images/edit.png" alt="編集" width="50" height="50">
           {{ csrf_field() }}
         </form>
       </div>
