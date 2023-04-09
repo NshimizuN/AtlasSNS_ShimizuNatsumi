@@ -17,6 +17,65 @@ jQuery(function ($) {
 });
 
 
+//アコーディオンメニュー ホバーイベント
+//ホームをホバーした時、背景青・文字色白になる
+$(function () {
+  $('.accordion-list1').hover(
+    function () {
+      $('.accordion-list1').css('background', '#206ccc');
+      $('.accordion-list1').css('transition', '0.3s');
+      $('.home-text').css('color', '#fff');
+      $('.home-text').css('transition', '0.3s');
+    },
+    //ホームをホバーしてない時、背景白・文字色青になる
+    function () {
+      $('.accordion-list1').css('background', '#fff');
+      $('.accordion-list1').css('transition', '0.3s');
+      $('.home-text').css('color', '#206ccc');
+      $('.home-text').css('transition', '0.3s');
+    }
+  );
+});
+
+//プロフィール編集をホバーした時、背景青・文字色白になる
+$(function () {
+  $('.accordion-list2').hover(
+    function () {
+      $('.accordion-list2').css('background', '#206ccc');
+      $('.accordion-list2').css('transition', '0.3s');
+      $('.profile-text').css('color', '#fff');
+      $('.profile-text').css('transition', '0.3s');
+    },
+    //プロフィール編集をホバーしてない時、背景白・文字色青になる
+    function () {
+      $('.accordion-list2').css('background', '#fff');
+      $('.accordion-list2').css('transition', '0.3s');
+      $('.profile-text').css('color', '#206ccc');
+      $('.profile-text').css('transition', '0.3s');
+    }
+  );
+});
+
+//ログアウトをホバーした時、背景青・文字色白になる
+$(function () {
+  $('.accordion-list3').hover(
+    function () {
+      $('.accordion-list3').css('background', '#206ccc');
+      $('.accordion-list3').css('transition', '0.3s');
+      $('.logout-text').css('color', '#fff');
+      $('.logout-text').css('transition', '0.3s');
+    },
+    //ログアウトをホバーしてない時、背景白・文字色青になる
+    function () {
+      $('.accordion-list3').css('background', '#fff');
+      $('.accordion-list3').css('transition', '0.3s');
+      $('.logout-text').css('color', '#206ccc');
+      $('.logout-text').css('transition', '0.3s');
+    }
+  );
+});
+
+
 
 //モーダル機能
 $(function () {

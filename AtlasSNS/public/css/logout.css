@@ -27,6 +27,9 @@ body {
     color: white;
 }
 
+a {
+    color: #ffffff;
+}
 
 .container {
     justify-content: center;
@@ -115,6 +118,7 @@ img {
 .regster-btn {
     display: block;
     margin-top: 20px;
+    color: #000000;
     font-size: 16px;
 }
 
@@ -131,6 +135,7 @@ img {
     border: 2px solid #EE3950;
     border-radius: 5px
 }
+
 
 /*↑login.blade↑*/
 

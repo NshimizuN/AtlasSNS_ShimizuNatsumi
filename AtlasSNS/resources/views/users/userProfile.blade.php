@@ -26,7 +26,6 @@
           <ul>
             <li>
               @if (auth()->user()->isFollowing($user->id))
-
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
               <p class="userunfollow-btn"><a href="/search/{{$user->id}}/unfollow">フォロー解除</a>

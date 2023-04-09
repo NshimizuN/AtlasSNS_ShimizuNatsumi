@@ -11,16 +11,16 @@
     <div class="follower-list">
       <h2>Follower list</h2>
       <div class="follower-box">
-        <div class="follower-iconbox">
-          @foreach($followed_users as $followed_user)
-          <!--$userから$followed_userを抽出-->
+        @foreach($followed_users as $followed_user)
+        <!--$userから$followed_userを抽出-->
+        <a href="{{ route('user-profile', ['id' => $followed_user->id]) }}">
           @if($followed_user->images == "dawn.png")
-          <img src="/images/icon1.png" alt="初期アイコン" width="70" height="70">
+          <img src="/images/icon1.png" class="follower-iconbox" alt="初期アイコン" width="70" height="70">
           @else
-          <img src=" {{ asset('storage/'.$followed_user->images)}}" alt="アイコン" width="70" height="70">
+          <img src=" {{ asset('storage/'.$followed_user->images )}}" class="follower-iconbox" alt="アイコン" width="70" height="70">
           @endif
-          @endforeach
-        </div>
+        </a>
+        @endforeach
       </div>
     </div>
   </div>

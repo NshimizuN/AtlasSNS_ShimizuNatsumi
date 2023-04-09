@@ -17,7 +17,9 @@
     {{Form::token()}}
 
     {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
-    <button><input type="image" src="./images/post.png" alt="投稿" alt="投稿" class="post-btn" width="80" height="80"></button>
+    <div class="postbtn-box">
+      <button><input type="image" src="./images/post.png" alt="投稿" alt="投稿" class="post-btn" width="80" height="80"></button>
+    </div>
     {!! Form::close() !!}
   </div>
 </div>
