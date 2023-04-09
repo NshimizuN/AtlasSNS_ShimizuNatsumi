@@ -441,15 +441,11 @@ header {
     height: 100px;
 }
 
-.post-btn {
+.postbtn-box {
     display: flex;
-    justify-content: flex-end
+    justify-content: end
 }
 
-.post-btn {
-    margin-left: 800px;
-    justify-content: flex-end
-}
 
 .post-container {
     border-bottom: 1px solid #000000;
@@ -490,7 +486,9 @@ header {
 /*編集、削除*/
 .btn-content {
     display: flex;
-    margin: 0px 0px 15px 990px;
+    margin-bottom: 15px;
+    margin-right: 70px;
+    justify-content: end;
 }
 
 .btn-delete {
